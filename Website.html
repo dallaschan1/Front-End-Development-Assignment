@@ -1,19 +1,59 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
     <head>
-        <title>Green Day</title>
-        <link rel="stylesheet" href = "style.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Apple Juice</title>
+
+        <link rel="stylesheet" href="style.css">
+        
+        
     </head>
+
     <body>
+        <div id ="Preloader"><h1>Cooking in progress</h1>
+        <div id="cooking">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div id=area>
+                <div id="sides">
+                    <div id="pan"></div>
+                    <div id="handle"></div>
+                </div>
+                <div id="pancake">
+                    <div id="pastry"></div>
+                </div>
+            </div>
+        </div></div>
+
         <header>
-            <img class ="logo" src="Header Logo.png">
-            <nav class = "navigation">
-                <a href="#">About Us</a>
-                <a href = "#">Music</a>
-                <a href = "#">Merchandise</a>
-                <a href="#">Tours</a>
-                <button class = "button-Login">Login</button>
-            </nav>
+            <img class = "icon" src="/images/location.png"> 
+            <a href ="#">Restaurant St, Delicious City, London 2323, SG</a>
         </header>
+        
+        <nav>
+        <a>Home</a>
+        <a>Menu</a>
+        <a>About us</a>
+        <a>Our Chefs</a>
+        <a>Contact</a>
+        </nav>
+        
+
+
+        <script>
+            window.addEventListener('load', () => {
+                // Set a timeout of 1000 milliseconds before hiding the preloader
+                setTimeout(() => {
+                    document.getElementById('Preloader').style.display = 'none';
+                }, 1000);
+            });
+        </script>
+        
+        
     </body>
 </html>
