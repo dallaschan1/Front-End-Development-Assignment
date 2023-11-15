@@ -1,184 +1,129 @@
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+#slider {
+    position: fixed; /* Change to fixed positioning */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Set width to full viewport width */
+    height: 100vh; /* Set height to full viewport height */
+    z-index: -1; /* Ensure it stays in the background */
+}
 
+.image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Ensures images stay in the background */
+}
+
+#text p {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    left: 10px;
+}
+
+#next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    right: 10px;
+}
 body {
     background-color: white;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    background: url('images/white-simple-textured-design-background.jpg') no-repeat;
+}
+
+.logo {
+    padding-top: 10px;
+    width: 100px; /* Fixed width for logo */
+    margin-right: 0; /* Space between logo and .Name */
 }
 
 header {
-    height: 40px;
     display: flex;
-    padding-top: 15px;
-    padding-left: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+.Name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: white; /* Remove margin */
+}
+
+.Name h1, .Name p {
+    margin: 0;
+    padding: 0;
 }
 
 .icon {
     background: none;
-    padding-bottom: 20px;
-    padding-right: 5px;
+    width: 30px;
+    height: 30px;
+    padding-right: 10px;
+    padding-left: 20px;
+    flex-shrink: 0;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 50px;
+.navigation {
     display: flex;
-    align-items: center;
-    z-index: 99;
-}
-
-#navlogo {
-    width: 100px;
-    height: 100px;
-}
-
-.click {
-    position: relative;
-    margin-left: 1010px;
     flex-wrap: nowrap;
+    flex-grow: 1; /* Allows navigation to grow and take available space */
+    justify-content: center; /* Center navigation items */
+    margin: 0 2%; /* Add margin on both sides */
 }
 
-.logo {
-    width: 200px;
-}
-
-.click a {
-    position: relative;
+.navigation a {
+    margin-right: 2%;
     font-size: 1.1em;
-    color: black;
+    color: white;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 40px;
 }
 
-.click .button-Login {
-    width: 130px;
-    height: 50px;
-    background: transparent;
-    border: 2px solid black;
-    outline: none;
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+.button-Login {
+    flex-shrink: 0;
+    margin-left: 5%;
+    width: 200px;
+    height: 60px;
+    background: gold;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.1em;
     color: black;
-    font-weight: 500;
-    margin-left: 40px;
+    margin-right: 2%;
+    z-index: 2;
 }
 
-/* Styles from the second CSS content */
-.circle {
-    width: 400px;
-    height: 400px;
-    overflow: hidden;
-    border-radius: 50%;
-    position: relative;
-    top: 100px;
-    left: 200px;
-    transform: rotateZ(23.5deg);
-    z-index: 1;
-}
-
-.earth {
-    position: absolute;
-    animation: animate 150s linear normal;
-    width: 10000px;
-    height: 1000px;
-    background-repeat: repeat-x;
-}
-
-.content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    box-shadow: -20px -20px 40px 10px black inset;
-}
-
-.continents {
-    animation: animate-2 43s linear 3.5;
-    width: 1000px;
-}
-
-@keyframes animate {
-    from {
-        transform: translateX(0px);
-    }
-    to {
-        transform: translateX(-3500px);
-    }
-}
-
-@keyframes animate-2 {
-    from {
-        transform: translateX(0px);
-    }
-    to {
-        transform: translateX(-1000px);
-    }
-}
-
-.continent {
-    position: absolute;
-    transform: rotateZ(-23.5deg);
-}
-
-.one {
-    top: 100px;
-    left: 140px;
-}
-
-.two {
-    top: 260px;
-    left: 264px;
-}
-
-.three {
-    top: 80px;
-    left: 490px;
-}
-
-.four {
-    top: 200px;
-    left: 510px;
-}
-
-.five {
-    top: 100px;
-    left: 680px;
-}
-
-.six {
-    top: 290px;
-    left: 810px;
-}
-
-.continent a {
-    color: white;
-    text-decoration: none;
-}
-
-.about {
-    width: 600px;
-    height: 800px;
-    position: absolute;
-    top: 50px;
-    left: 800px;
-    color: white;
-    display: none;
-}
-
-.about img {
-    width: 100%;
-    height: 300px;
+.top a{
+    color: aliceblue;
 }
