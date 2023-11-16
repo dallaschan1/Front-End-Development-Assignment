@@ -54,27 +54,43 @@
 #text p.active {
     display: block; /* Only show the text element with class 'active' */
 }
-#prev {
+#prev, #next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background: transparent; /* Make the button background transparent */
     border: none;
     cursor: pointer;
+    z-index: 2; /* Ensure it's above the slider images */
+}
+
+#prev {
     left: 10px;
 }
 
 #next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
     right: 10px;
 }
+
+#prev img, #next img {
+    width: 50px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* If you want to add an arrow in the middle of the diamond */
+#prev img:after, #next img:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px; /* Adjust as needed */
+    height: 20px; /* Adjust as needed */
+    background-image: url('/path/to/your/arrow-icon.png');
+    background-size: cover;
+}
+
+
 body {
     background-color: white;
 }
