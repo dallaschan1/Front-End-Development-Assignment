@@ -1,12 +1,14 @@
+/* Slider Section: Full-screen background image slider styling */
 #slider {
-    position: fixed; /* Change to fixed positioning */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Set width to full viewport width */
-    height: 100vh; /* Set height to full viewport height */
-    z-index: -1; /* Ensure it stays in the background */
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
 }
 
+/* Image Styling: Default styles for slider images, initially hidden */
 .image {
     display: none;
     position: absolute;
@@ -16,9 +18,10 @@
     height: 100%;
     background-size: cover;
     background-position: center;
-    z-index: -1; /* Ensures images stay in the background */
+    z-index: -100;
 }
 
+/* Text Overlay: Styles for text displayed over the slider */
 #text {
     display: flex;
     justify-content: center;
@@ -29,81 +32,103 @@
     width: 100%;
     height: 100%;
     color: white;
-  }
-  .text-content {
-    text-align: center;
-  }
-  
+    font-family:'Times New Roman', Times, serif;
+}
 
-.upper-text, .lower-text {
-    display: none; /* Hide by default */
+/* Text Content Alignment */
+.text-content {
+    text-align: center;
+}
+
+/* Text Visibility: Controls visibility of different text layers */
+.upper-text, .lower-text, .lowest-text {
+    display: none;
     margin: 0;
     font-size: 100px;
 }
 
-.active .upper-text, .active .lower-text {
-    display: block; /* Show when active */
+/* Active Text Display: Shows text elements when they are active */
+.active .upper-text, .active .lower-text, .active .lowest-text {
+    display: block;
 }
 
+/* Specific Text Styling for lower and lowest text layers */
 .lower-text {
-    font-size: 100px; /* Optional: smaller font size for 'tells a story' */
+    font-size: 100px;
+}
+.lowest-text {
+    position: relative;
+    top: 10px;
+    font-size: 20px;
 }
 
-
-
+/* Active Paragraph Styling: Shows only the active paragraph */
 #text p.active {
-    display: block; /* Only show the text element with class 'active' */
+    display: block;
 }
-#prev, #next {
+
+/* Diamond Buttons: Styling for diamond-shaped navigation buttons */
+.diamond-button1 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    border: solid 4px hsl(38, 61%, 73%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 0;
+    padding-right: 10px;
+}
+
+.diamond-button2 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: transparent; /* Make the button background transparent */
-    border: none;
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    border: solid 4px hsl(38, 61%, 73%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    z-index: 2; /* Ensure it's above the slider images */
+    z-index: 0;
+    padding-left: 10px;
 }
 
-#prev {
-    left: 10px;
+/* Button Positioning for 'previous' and 'next' buttons */
+#prev { left: 2%; }
+#next { right: 2%; }
+
+/* Diamond Button Icons: Styling for icons within diamond buttons */
+.diamond-button1 i, .diamond-button2 i {
+    color: hsl(38, 61%, 73%);
+    font-size: 20px;
 }
 
-#next {
-    right: 10px;
-}
-
-#prev img, #next img {
-    width: 50px; /* Adjust the size as needed */
-    height: auto; /* Maintain aspect ratio */
-}
-
-/* If you want to add an arrow in the middle of the diamond */
-#prev img:after, #next img:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px; /* Adjust as needed */
-    height: 20px; /* Adjust as needed */
-    background-image: url('/path/to/your/arrow-icon.png');
-    background-size: cover;
-}
-
-
+/* Body Styling */
 body {
     background-color: white;
 }
 
+/* Logo Styling */
 .logo {
-    width: 200px; /* Estimated combined width */
-    height: auto; /* Maintain aspect ratio */
+    width: 200px;
+    height: auto;
     padding-top: 10px;
     margin-right: auto;
     margin-left: auto;
     display: block;
-    margin-left: 2%; /* To enable margin auto to work for centering */
+    margin-left: 2%;
 }
+
+/* Header Styling */
 header {
     margin-top: 30px;
     display: flex;
@@ -111,8 +136,8 @@ header {
     align-items: center;
 }
 
-
-.icon {
+/* Icon Styling */
+.icon, .icons {
     background: none;
     width: 20px;
     height: 20px;
@@ -122,24 +147,27 @@ header {
     filter: invert(100%);
 }
 
+/* Navigation Bar Styling */
 .navigation {
     display: flex;
     flex-wrap: nowrap;
-    flex-grow: 1; /* Allows navigation to grow and take available space */
-    justify-content: center; /* Center navigation items */
-    margin: 0 2%; /* Add margin on both sides */
+    flex-grow: 1;
+    justify-content: end;
+    margin: 0 2%;
 }
 
+/* Navigation Link Styling */
 .navigation a {
     margin-left: 2%;
-    font-size: 1.1em;
+    font-size: 1.2rem;
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-family: 'DM Sans', sans-serif; /* Using DM Sans for navigation links */
+    font-family: 'Times New Roman', Times, serif;
+    z-index: 10;
 }
 
-
+/* Top Bar Styling */
 .top {
     display: flex;
     align-items: center;
@@ -148,25 +176,29 @@ header {
     margin-top: 10px;
 }
 
+/* Login Button Styling */
 .button-Login {
     flex-shrink: 0;
-    margin-left: 3%;
+    margin-left: 0%;
     width: 200px;
     height: 60px;
-    background:  hsl(38, 61%, 73%);
+    background: hsl(38, 61%, 73%);
     cursor: pointer;
     font-size: 1.1em;
     color: black;
     margin-right: 2%;
     z-index: 2;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-.top a{
+/* Top Bar Link Styling */
+.top a {
     color: aliceblue;
     text-decoration: none;
     font-size: 13px;
 }
 
+/* Active Navigation Link Styling */
 .navigation a[href="Website.html"] {
     position: relative;
     display: inline-block;
@@ -176,9 +208,9 @@ header {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -9px; /* Adjust this value to change the distance from the text */
+    bottom: -9px;
     width: 100%;
-    height: 2px; /* Thickness of the underline */
-    background-color: hsl(38, 61%, 73%); /* Color of the underline */
-    box-shadow: 0 3px hsl(38, 61%, 73%); /* Creates the second line and adjusts its position */
+    height: 2px;
+    background-color: hsl(38, 61%, 73%);
+    box-shadow: 0 3px hsl(38, 61%, 73%);
 }
