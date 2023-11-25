@@ -7,17 +7,18 @@ document.getElementById("prev").addEventListener("click", () => changeSlide(-1))
 document.getElementById("next").addEventListener("click", () => changeSlide(1));
 
 function changeSlide(step) {
-    // Hide the currently displayed image and text
-    images[currentIndex].style.display = 'none';
-    textContents[currentIndex].classList.remove('active'); // Adjust to target .text-content div
+    // Hide the currently displayed image and text with fade out
+    images[currentIndex].classList.remove('active');
+    textContents[currentIndex].classList.remove('active');
 
     // Update the current index
     currentIndex = (currentIndex + step + totalImages) % totalImages;
 
-    // Show the new image and text
-    images[currentIndex].style.display = 'block';
-    textContents[currentIndex].classList.add('active'); // Adjust to target .text-content div
+    // Show the new image and text with fade in
+    images[currentIndex].classList.add('active');
+    textContents[currentIndex].classList.add('active');
 }
+
 
 // Initialize first slide and text
 changeSlide(0);
