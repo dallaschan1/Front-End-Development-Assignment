@@ -443,7 +443,7 @@
     padding: 10px 20px;
     margin-top: 20px; 
     background-color: transparent; 
-    color: hsl(38, 61%, 73%); 
+    color: hsl(38, 70%, 81%); 
     border: solid;
     border-color: hsl(38, 61%, 73%);
     border-width: 1px;
@@ -452,9 +452,13 @@
     width: 20%;
     height: 10%;
     z-index: 2;
+    transition: 0.4s ease-in;
 }
 
-
+#reservation-button:hover{
+  color: black;
+  background-color: hsl(38, 61%, 73%);
+}
 
 /* Diamond Buttons: Styling for diamond-shaped navigation buttons */
 .diamond-button1, .diamond-button2 {
@@ -566,7 +570,7 @@ header {
 /* Navigation Link Styling */
 .navigation a {
     margin-left: 2%;
-    font-size: 1.2rem;
+    font-size: calc((3rem + 6.7vw) / 8.85);
     color: white;
     text-decoration: none;
     font-weight: 500;
@@ -600,7 +604,7 @@ header {
 .top-group, .top-group2 {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 1.57894vw;
     
 }
 
@@ -615,7 +619,7 @@ header {
 .top a {
     color: aliceblue;
     text-decoration: none;
-    font-size: 15px;
+    font-size: calc((2rem + 5.31vw) / 8.85);
     padding-top: 2px;
 }
 
@@ -633,6 +637,7 @@ header {
 .navigation a[href="Website.html"] {
     position: relative;
     display: inline-block;
+    color: hsl(38, 61%, 73%);
 }
 
 .navigation a[href="Website.html"]::after {
@@ -645,4 +650,33 @@ header {
     background-color: hsl(38, 61%, 73%);
     box-shadow: 0 3px hsl(38, 61%, 73%);
 }
+
+.navigation a[href="Menu.html"] {
+  position: relative;
+  display: inline-block;
+  transition: color 0.4s ease, border-color 0.4s ease; /* Added border-color to transition */
+}
+
+.navigation a[href="Menu.html"]:hover {
+  color: hsla(38, 61%, 73%, 0.737);
+  border-color: hsl(38, 61%, 73%);
+   /* Added border-color change on hover */
+}
+
+.navigation a[href="Menu.html"]::after {
+  width: 0;
+  transition: width 2s ease-in, box-shadow 2s ease;
+}
+
+.navigation a[href="Menu.html"]:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -9px;
+  width: 100%; 
+  height: 2px;
+  background-color: hsl(38, 61%, 73%, 0.737);
+  box-shadow: 0 3px hsl(38, 61%, 73%, 0.737);
+}
+
 
