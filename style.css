@@ -1,5 +1,8 @@
 
 /* Slider Section: Full-screen background image slider styling */
+
+
+
 #slider {
     position: fixed;
     top: 0;
@@ -21,6 +24,7 @@
     background-size: cover;
     background-position: center;
     z-index: -100;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Added transition for zoom and fade */
 }
 
 /* Text Overlay: Styles for text displayed over the slider */
@@ -284,14 +288,24 @@ header {
     margin: 0 10px;
 }
 
-/* Active Navigation Link Styling */
-.navigation a[href="Website.html"] {
-    position: relative;
-    display: inline-block;
-    color: hsl(38, 61%, 73%);
+/* General Navigation Link Styling */
+.navigation a {
+    margin-left: 2%;
+    font-size: calc((3rem + 6.7vw) / 8.85);
+    color: white; /* Default color */
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative; /* Added for positioning the ::after pseudo-element */
+    z-index: 10;
 }
 
-.navigation a[href="Website.html"]::after {
+/* Active Navigation Link Styling */
+.navigation a.active {
+    color: hsl(38, 61%, 73%); /* Active link color */
+}
+
+.navigation a.active::after, .navigation a:hover::after {
     content: '';
     position: absolute;
     left: 0;
@@ -302,32 +316,91 @@ header {
     box-shadow: 0 3px hsl(38, 61%, 73%);
 }
 
-.navigation a[href="Menu.html"] {
-  position: relative;
-  display: inline-block;
-  transition: color 0.4s ease, border-color 0.4s ease; /* Added border-color to transition */
+/* Hover Styling for Non-active Links */
+.navigation a:not(.active):hover {
+    color: hsla(38, 61%, 73%, 0.737); /* Hover color for non-active links */
+    /* Additional hover styles for non-active links if needed */
 }
 
-.navigation a[href="Menu.html"]:hover {
-  color: hsla(38, 61%, 73%, 0.737);
-  border-color: hsl(38, 61%, 73%);
-   /* Added border-color change on hover */
+/* Reset the ::after pseudo-element for non-active links */
+.navigation a:not(.active)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    width: 0; /* Initially no width */
+    height: 2px;
+    background-color: hsl(38, 61%, 73%, 0);
+    box-shadow: 0 3px hsl(38, 61%, 73%, 0);
+    transition: width 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-.navigation a[href="Menu.html"]::after {
-  width: 0;
-  transition: width 2s ease-in, box-shadow 2s ease;
-}
-
-.navigation a[href="Menu.html"]:hover::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -9px;
-  width: 100%; 
-  height: 2px;
-  background-color: hsl(38, 61%, 73%, 0.737);
-  box-shadow: 0 3px hsl(38, 61%, 73%, 0.737);
+/* Hover effect for the underline on non-active links */
+.navigation a:not(.active):hover::after {
+    width: 100%; /* Full width on hover */
+    background-color: hsl(38, 61%, 73%, 0.737);
+    box-shadow: 0 3px hsl(38, 61%, 73%, 0.737);
 }
 
 
+.Menu{
+    background-color: rgba(0, 0, 0, 0.9);
+   
+}
+
+.Menu-container
+{
+    color: white;
+    margin-left: 40px;
+    margin-top: 60px;
+    overflow-x: hidden;
+}
+
+.Menu-container h1{
+    
+    letter-spacing: 2px;
+}
+
+.dishoftheday{
+    width: 45vw;
+    height: 70vh;
+    padding-left: 50px;
+}
+
+.dotd{
+    display: flex;
+}
+
+#special{
+    color: hsl(38, 61%, 73%);
+    font-size: 14px;
+    font-family: 'DM-Sans';
+    letter-spacing: 2px; 
+    margin-bottom: -25px;
+    padding-top: 100px;
+}
+
+.dotd .text{
+    padding-left: 100px;
+    width: 40%;
+}
+
+.dotd .text h1{
+    font-size: 50px;
+}
+
+#Menu-Deco{
+    margin-left: calc(100vw - 360px);
+    left: 75.5%;
+    width:360px;
+    height: 360px;
+    z-index: -1;
+    opacity: 0.6;
+    background-image: url(images/shape-9.png);
+}
+
+#Menu-Logo{
+    position: absolute;
+    top: 115%;
+    left: 10%;
+}

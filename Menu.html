@@ -3,16 +3,16 @@
     <head>
         <title>Goodness kitchen</title>
         <link rel="stylesheet" href="normalize.css">
-        <link rel="stylesheet" href="menu.style.css">
+        <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body class="Menu">
         <header>
             <img class="logo" src="images/logo.svg" alt="Restaurant logo">
             
             <nav class="navigation">
-                <a href="Website.html">Home</a>
-                <a href="Menu.html">Menu</a>
+                <a href="index.html">Home</a>
+                <a href="Menu.html" class="active">Menu</a>
                 <a href="#">Chefs</a>
                 <a href="#">About Us</a>
                 <a href="#">Contact Us</a>
@@ -20,14 +20,20 @@
             <button class="button-Login">Login / Sign in</button>
         </header>
 
-        <article class="dishoftheday">
-            <img src="images/special-dish-banner.jpg" alt="Special Dish Image">
+        <main class="Menu-container">
+            <article class="dotd">
+            <img src="images/special-dish-banner.jpg" alt="Dish of the day" class="dishoftheday">
             <main class="text">
-            <h1>Ocean's Whisper</h1>
-            <p>Today's highlight is the 'Ocean's Whisper': a delicate, pan-seared seabass,resting on a bed of aromatic jasmine rice, accompanied by a zesty lime-infused butter sauce and garnished with fresh,
-                hand-picked cilantro. Each bite promises a symphony of flavors, capturing the essence of the sea</p>
+                <p id="special">DISH OF THE DAY</p>
+                <h1>Meaty Delight</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquam quam et dui luctus egestas. Nullam quis tortor euismod, varius augue posuere, congue orci. Maecenas mollis interdum orci quis consequat. Duis mi ex, venenatis ac pharetra tincidunt, fermentum id enim. Sed vel sem tellus. Pellentesque et blandit urna, a vulputate nulla. Aliquam ut eros eros. Ut porttitor eleifend mi ut gravida. Donec fermentum pulvinar cursus. Sed volutpat semper magna, in fermentum nisi sollicitudin a. Aliquam erat volutpat. Pellentesque laoreet faucibus eros, id porttitor ipsum sodales non.</p>
             </main>
-        </article>
+            </article>
+            <div id="Menu-Deco"></div>
+   
+            <img src="images/badge-2.png" alt="menu logo" id="Menu-Logo">
+
+        </main>
 
     </body>
 </html>
