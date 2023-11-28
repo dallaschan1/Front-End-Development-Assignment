@@ -15,7 +15,10 @@ document.getElementById('viewMenuButton').addEventListener('click', function() {
     document.getElementById('content').scrollIntoView({ behavior: 'smooth' });
 });
 
-function toggleMenu() {
-    var navigation = document.querySelector('.navigation');
-    navigation.classList.toggle('active');
-}
+document.querySelector('.hamburger-menu').addEventListener('click', function() {
+document.querySelector('.navigation').style.left = '-20px'; // Show menu
+});
+
+document.querySelector('.close-menu').addEventListener('click', function() {
+    document.querySelector('.navigation').style.left = '-100%'; // Hide menu
+});

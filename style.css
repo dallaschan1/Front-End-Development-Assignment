@@ -286,7 +286,7 @@ header {
 .top a {
     color: aliceblue;
     text-decoration: none;
-    font-size: calc((2rem + 5.31vw) / 8.85);
+    font-size: calc((2.5rem + 5.31vw) / 8.85);
     padding-top: 2px;
 }
 
@@ -427,8 +427,10 @@ header {
     font-size: 40px;
     font-family: 'DM-Sans';
     letter-spacing: 2px; 
-    margin-left: 47%;
-    margin-top: -100px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
 }
 
 
@@ -519,7 +521,7 @@ color: gold;
 
 .item img{
     width: calc(30px + 6.3vw);
-    border-radius: 90px;
+    border-radius: 20px;
 }
 .name-and-price {
     display: flex;
@@ -580,8 +582,325 @@ color: gold;
     color: hsl(38, 67%, 57%)
 }
 
+.hamburger-menu, .close-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
 
-@media screen and (max-width: 768px) {
+
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: 50px;
+    z-index: 1001;
+}
+@media screen and (max-width: 576px) {
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
+    }
+
+    .navigation {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Start off-screen */
+        width: 60%;
+        height: 100%;
+        background: black;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        transition: left 0.3s;
+        justify-content: start;
+        padding-top: 20px;
+    }
+
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        z-index: 1002;
+    }
+    .navigation a.active {
+        color: hsl(38, 73%, 59%);
+        font-weight: bolder; /* Active link color */
+    }
+    .logo-in-menu {
+        display: block;
+        margin-top: 60px;
+        margin-left: 70px; /* Adjust as needed */
+        width: 50%; 
+        margin-bottom: 80px;/* Adjust size as needed */
+    }
+
+    .navigation a {
+        padding: 10px 20px;
+        margin: 5px 0;
+        display: block;
+        color: white;
+        text-align: left;
+        width: 70%;
+        font-family: 'DM-Sans', sans-serif;
+        letter-spacing: 2px;
+    }
+    .navigation a.active::after, .navigation a:hover::after {
+        content: '';
+        position: absolute;
+        left: 18px;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: hsl(38, 61%, 73%);
+        box-shadow: 0 3px transparent;
+    }
+    
+    /* Hover Styling for Non-active Links */
+    .navigation a:not(.active):hover {
+        color: hsla(38, 61%, 73%, 0.737); /* Hover color for non-active links */
+        
+    }
+    
+    /* Reset the ::after pseudo-element for non-active links */
+    .navigation a:not(.active)::after {
+        content: '';
+        position: absolute;
+        left: 18px;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: hsl(38, 61%, 73%);
+        box-shadow: 0 3px transparent;
+    }
+    
+    /* Hover effect for the underline on non-active links */
+    .navigation a:not(.active):hover::after {
+        
+        box-shadow: 0 3px transparent;
+    }
+    
+
+
+
+
+
+    
+
+
+    
+    .Menu{
+        overflow-x: hidden;
+    }
+    .Menu-container {
+        margin-left: 20px;
+        overflow-x: hidden;   
+    }
+
+    .dishoftheday {
+        width: 80vw;
+        height: 60vw;
+        padding-left: 10px;
+        overflow-x: hidden;
+    }
+
+    .dotd {
+        overflow-x: hidden;
+        display: block; /* Stack vertically */
+    }
+
+    .dotd .text {
+        overflow-x: hidden;
+        padding-left: 20px;
+        width: 100%;
+        margin-top: -80px; /* Adjust if needed */
+    }
+
+    .dotd .text h1 {
+        font-size: 30px;
+    }
+
+    #Menu-Deco {
+        margin-left: calc(100vw - 300px);
+        width: 300px;
+        height: 300px;
+        margin-top: 100px;
+    }
+
+    #Menu-Logo {
+        margin-top: -200px;
+        margin-left: 0px; /* Adjusted */
+    }
+
+    #Menu-Name {
+        font-size: 30px;
+        margin-left: 45%;
+        padding-top: 100px;
+    }
+
+    #content {
+        overflow-x: hidden;
+        width: 100%;
+        min-height: min-content /* Adjust based on content height */
+    }
+
+    .item-group {
+        display: block;
+        margin-bottom: 0; /* Stack items vertically */
+        
+    }
+
+    .item {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        
+    }
+
+    .item img {
+        width: 90px; /* Adjust as needed */
+        /* Center the image */
+    }
+
+    .text-contents {
+         overflow: hidden;
+        width: 300px; /* Ensure text fits within the container */
+        padding: 15px;
+    }
+
+    .text-contents h3 {
+        font-size: 15px;
+        padding-top: 25px;
+    }
+
+    .text-contents p {
+        font-size: calc(5px + 0.9vw);
+        overflow: hidden;
+        
+    }
+
+    .dotd .text{
+        width: 460px;
+    }
+    .separator2 {
+        display: none; /* Hide if it causes layout issues */
+    }
+
+    #menu-selector-holder {
+        position: relative;
+        margin-bottom: 0; 
+        margin-top: 0;
+        
+    }
+
+    .price-line {
+        margin-top: 40px;
+    }
+
+    #special{
+        padding-bottom: 15px;
+        font-size: 10px;
+    }
+    .text button {
+        width: 50%;
+        height: 60px;
+    }
+}
+
+
+@media screen and (min-width: 576.1px) and (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
+    }
+
+    .navigation {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Start off-screen */
+        width: 60%;
+        height: 100%;
+        background: black;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        transition: left 0.3s;
+        justify-content: start;
+        padding-top: 20px;
+    }
+
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        z-index: 1002;
+    }
+    .navigation a.active {
+        color: hsl(38, 73%, 59%);
+        font-weight: bolder; /* Active link color */
+    }
+    .logo-in-menu {
+        display: block;
+        margin-top: 60px;
+        margin-left: 70px; /* Adjust as needed */
+        width: 50%; 
+        margin-bottom: 80px;/* Adjust size as needed */
+    }
+
+    .navigation a {
+        padding: 10px 20px;
+        margin: 5px 0;
+        padding-left: 27px;
+        display: block;
+        color: white;
+        text-align: left;
+        width: 70%;
+        font-family: 'DM-Sans', sans-serif;
+        letter-spacing: 2px;
+    }
+    .navigation a.active::after, .navigation a:hover::after {
+        content: '';
+        position: absolute;
+        left: 28px;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: hsl(38, 61%, 73%);
+        box-shadow: 0 3px transparent;
+    }
+    
+    /* Hover Styling for Non-active Links */
+    .navigation a:not(.active):hover {
+        color: hsla(38, 61%, 73%, 0.737); /* Hover color for non-active links */
+        
+    }
+    
+    /* Reset the ::after pseudo-element for non-active links */
+    .navigation a:not(.active)::after {
+        content: '';
+        position: absolute;
+        left: 28px;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: hsl(38, 61%, 73%);
+        box-shadow: 0 3px transparent;
+    }
+    
+    /* Hover effect for the underline on non-active links */
+    .navigation a:not(.active):hover::after {
+        
+        box-shadow: 0 3px transparent;
+    }
+    
+
+    
+
+
     .Menu-container {
         margin-left: 20px;
     }
@@ -656,8 +975,6 @@ color: gold;
     }
     
 }
-
-
 
 /* Here is Our Chers.html css styling */
 

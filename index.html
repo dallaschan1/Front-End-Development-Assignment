@@ -98,17 +98,19 @@
         
         <hr style=" opacity: 0.2;">
         <header>
-            <img class="logo" src="images/logo.svg">
-            
+            <img class="logo" src="images/logo.svg" alt="Restaurant logo"> <!-- Original Logo -->
+            <button class="hamburger-menu">☰</button> <!-- Hamburger icon -->
             <nav class="navigation">
-                <a href="index.html" class="active">Home</a>
-                <a href="Menu.html">Menu</a>
-                <a href="Chefs.html">Chefs</a>
-                <a href="About_us.html">About Us</a>
-                <a href="Reviews.html">Reviews</a>
+                <button class="close-menu">X</button> <!-- Close icon -->
+                <img class="logo-in-menu" src="images/logo.svg" alt="Restaurant logo" hidden> <!-- Logo in Menu -->
+                <a href="index.html">Home</a>
+                <a href="Menu.html" class="active">Menu</a>
+                <a href="#">Chefs</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
             </nav>
-            <button class="button-Login">Login / Sign in</button>
         </header>
+        
     </div>
 
     <script src="script.js" defer></script>
