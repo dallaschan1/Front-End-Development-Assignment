@@ -14,3 +14,8 @@ function updateMenu(category) {
 document.getElementById('viewMenuButton').addEventListener('click', function() {
     document.getElementById('content').scrollIntoView({ behavior: 'smooth' });
 });
+
+function toggleMenu() {
+    var navigation = document.querySelector('.navigation');
+    navigation.classList.toggle('active');
+}
