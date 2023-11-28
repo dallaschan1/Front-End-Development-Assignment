@@ -90,6 +90,7 @@
 .image.active {
     display: block;
 }
+
 #reservation-button {
     font-family: DM-Sans;
     font-weight: bold;
@@ -172,6 +173,14 @@
     font-size: 20px;
 }
 
+.image {
+    
+    transition: transform 2s ease-in-out, opacity 1s ease-in-out; 
+}
+
+.image.zooming {
+    transform: scale(1.1); 
+}
 
 
 
@@ -319,7 +328,7 @@ header {
 /* Hover Styling for Non-active Links */
 .navigation a:not(.active):hover {
     color: hsla(38, 61%, 73%, 0.737); /* Hover color for non-active links */
-    /* Additional hover styles for non-active links if needed */
+    
 }
 
 /* Reset the ::after pseudo-element for non-active links */
@@ -343,6 +352,8 @@ header {
 }
 
 
+/* After this is the CSS Styling for Menu.html */
+
 .Menu{
     background-color: rgba(0, 0, 0, 0.9);
    
@@ -354,6 +365,7 @@ header {
     margin-left: 40px;
     margin-top: 60px;
     overflow-x: hidden;
+
 }
 
 .Menu-container h1{
@@ -401,6 +413,164 @@ header {
 
 #Menu-Logo{
     position: absolute;
-    top: 115%;
-    left: 10%;
+    top: 100%;
+    left: 5%;
+}
+
+#Menu-Name{
+    color: hsl(38, 61%, 73%);
+    font-size: 40px;
+    font-family: 'DM-Sans';
+    letter-spacing: 2px; 
+    margin-left: 46%;
+    margin-top: -100px;
+}
+
+
+#menu-selector-holder {
+    padding: 10px;
+    background-color: transparent;
+    border-bottom: 3px solid #ddd;
+    margin-top: 100px;
+    z-index: 1000;
+    width:fit-content; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-bottom: 100px;
+}
+
+
+.menu-selector, .separator {
+font-size: 50px; 
+font-family: 'Times New Roman', Times, serif;
+color: white;
+cursor: pointer;
+margin: 0 10px;
+}
+
+.separator {
+cursor: default; /* Prevents the cursor from changing on slashes */
+}
+
+.menu-selector.selected {
+color: gold;
+}
+
+#content{
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    overflow: hidden;
+    
+    
+}
+
+.item-group{
+    display: flex;
+    gap: 150px;
+    justify-content: center;
+    margin-bottom: -20px;
+}
+
+.item{
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    width: 650px;
+    padding-top: 50px;
+
+}
+
+.separator2{
+    height: 500px;
+    border: 1px solid white ;
+    background-color: white;
+    margin-top: -150px;
+    
+}
+
+.text-contents {
+    font-family: 'DM Sans', sans-serif;
+    padding-left: calc(5px + 2vw);
+    margin-top: -20px;
+    line-height: 1.2; /* Adjusted line height */
+    width: 55%;
+}
+
+.text-contents h3 {
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 0px; /* Remove space below the heading */
+}
+
+.text-contents p {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #C1C1C1; /* Remove space above the paragraph */
+    
+}
+
+.item img{
+    width: 150px;
+    border-radius: 90px;
+}
+.name-and-price {
+    display: flex;
+    align-items: center; /* Aligns the elements vertically */
+}
+
+.price-line {
+    margin-top: 27px;
+    margin-left: 10px; /* Space from the dish name */
+    white-space: nowrap; /* Keeps the line and price together */
+    position: relative; /* For positioning the pseudo-element */
+    flex-grow: 0.8; /* Allows the line to take available space */
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    color: hsl(38, 67%, 57%);
+}
+
+.price-line::before {
+    content: '';
+    flex-grow: 1; /* Allows the line to grow and fill the space */
+    width: 10px;
+    height: 5px;
+    border: 2px solid #C1C1C1;
+    background-color: transparent; /* Creates the horizontal line */
+    margin-right: 10px; /* Space between the line and dollar sign */
+}
+
+#extension{
+    position: absolute;
+    bottom: -100;
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+    ;
+}
+
+.text button{
+    size: 30%;
+    color: hsl(38, 61%, 73%);
+    margin-top: 40px;
+    width: 40%;
+    height: calc(10px + 5vh);
+    background-color: transparent;
+    border: 3px solid hsl(38, 61%, 73%);
+    letter-spacing: 1px;
+    transition: 0.3s ease-in;
+    cursor: pointer;
+    
+}
+
+.text button:hover{
+    color: black;
+    background-color: hsl(38, 61%, 73%);
+}
+
+.menu-selector.active {
+    color: hsl(38, 67%, 57%)
 }

@@ -23,17 +23,308 @@
         <main class="Menu-container">
             <article class="dotd">
             <img src="images/special-dish-banner.jpg" alt="Dish of the day" class="dishoftheday">
-            <main class="text">
-                <p id="special">DISH OF THE DAY</p>
-                <h1>Meaty Delight</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquam quam et dui luctus egestas. Nullam quis tortor euismod, varius augue posuere, congue orci. Maecenas mollis interdum orci quis consequat. Duis mi ex, venenatis ac pharetra tincidunt, fermentum id enim. Sed vel sem tellus. Pellentesque et blandit urna, a vulputate nulla. Aliquam ut eros eros. Ut porttitor eleifend mi ut gravida. Donec fermentum pulvinar cursus. Sed volutpat semper magna, in fermentum nisi sollicitudin a. Aliquam erat volutpat. Pellentesque laoreet faucibus eros, id porttitor ipsum sodales non.</p>
-            </main>
+                <main class="text">
+                    <p id="special">DISH OF THE DAY</p>
+                    <h1>Meaty Delight</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquam quam et dui luctus egestas. Nullam quis tortor euismod, varius augue posuere, congue orci. Maecenas mollis interdum orci quis consequat. Duis mi ex, venenatis ac pharetra tincidunt, fermentum id enim. Sed vel sem tellus. Pellentesque et blandit urna, a vulputate nulla. Aliquam ut eros eros. Ut porttitor eleifend mi ut gravida. Donec fermentum pulvinar cursus. Sed volutpat semper magna, in fermentum nisi sollicitudin a. Aliquam erat volutpat. Pellentesque laoreet faucibus eros, id porttitor ipsum sodales non.</p>
+                    <button  id="viewMenuButton">View Our Menu</button>        
+                </main>
             </article>
+            
+            
             <div id="Menu-Deco"></div>
    
             <img src="images/badge-2.png" alt="menu logo" id="Menu-Logo">
 
-        </main>
+            <main>
+                <p id="Menu-Name">Menu</p>
+                <div id="menu-selector-holder">
+                    <span class="menu-selector active" onclick="updateMenu('chicken')">Chicken</span>
+                    <span class="separator">/</span>
+                    <span class="menu-selector" onclick="updateMenu('drink')">Drink</span>
+                    <span class="separator">/</span>
+                    <span class="menu-selector" onclick="updateMenu('salad')">Salad</span>
+                    <span class="separator">/</span>
+                    <span class="menu-selector" onclick="updateMenu('seafood')">Seafood</span>
+                </div>
+                
+                  
+                <div id="content">
+                    <div id="chicken-menu" class="menu-content">
+                        <div class="item-group">
+                            <!-- Item 1 -->
+                            <div class="item">
+                                <img src="images/menu-1.png" alt="Chicken Dish" class="food-image">
+                                <div class="text-contents">
+                                    <div class="name-and-price">
+                                        <h3>Grilled Chicken Supreme</h3>
+                                        <span class="price-line">$18</span>
+                                    </div>
+                                    <p>Juicy grilled chicken with a side of steamed vegetables and garlic butter sauce.</p>
+                                </div>
+                            </div>
+                            <div class="separator2"></div>
+                            <!-- Item 2 -->
+                            <div class="item">
+                                <img src="images/menu-1.png" alt="Chicken Dish" class="food-image">
+                                <div class="text-contents">
+                                    <div class="name-and-price">
+                                        <h3>Chicken Parmesan</h3>
+                                        <span class="price-line">$20</span>
+                                    </div>
+                                    <p>Crispy fried chicken breast topped with marinara sauce and melted mozzarella cheese.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-group">
+                            <!-- Item 3 -->
+                            <div class="item">
+                                <img src="images/menu-1.png" alt="Chicken Dish" class="food-image">
+                                <div class="text-contents">
+                                    <div class="name-and-price">
+                                        <h3>Lemon Herb Chicken</h3>
+                                        <span class="price-line">$17</span>
+                                    </div>
+                                    <p>Tender chicken marinated in lemon and herbs, served with aromatic rice and lemon wedges.</p>
+                                </div>
+                            </div>
+                            <div class="separator2"></div>
+                            <!-- Item 4 -->
+                            <div class="item">
+                                <img src="images/menu-1.png" alt="Chicken Dish" class="food-image">
+                                <div class="text-contents">
+                                    <div class="name-and-price">
+                                        <h3>Spicy Chicken Wings</h3>
+                                        <span class="price-line">$15</span>
+                                    </div>
+                                    <p>Hot and spicy chicken wings served with a cooling blue cheese dip and celery sticks.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-group">
+                            <!-- Item 5 -->
+                            <div class="item">
+                                <img src="images/menu-1.png" alt="Chicken Dish" class="food-image">
+                                <div class="text-contents">
+                                    <div class="name-and-price">
+                                        <h3>Chicken Tikka Masala</h3>
+                                        <span class="price-line">$19</span>
+                                    </div>
+                                    <p>Classic Indian dish with grilled chicken pieces in a creamy tomato sauce, served with naan bread.</p>
+                                </div>
+                            </div>
+                            <div class="separator2"></div>
+                            <!-- Item 6 -->
+                            <div class="item">
+                                <img src="images/menu-1.png" alt="Chicken Dish" class="food-image">
+                                <div class="text-contents">
+                                    <div class="name-and-price">
+                                        <h3>BBQ Chicken Skewers</h3>
+                                        <span class="price-line">$16</span>
+                                    </div>
+                                    <p>Savory BBQ chicken skewers with a mix of bell peppers and onions, perfect for a light meal.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Drink Menu -->
+                    <div id="drink-menu" class="menu-content" style="display: none;">
+                        <div class="item-group">
+                            <!-- Item 1 -->
+                            <div class="item">
+                                <img src="images/menu-1.png" alt="Drink" class="food-image">
+                                <div class="text-contents">
+                                    <div class="name-and-price">
+                                        <h3>Mango Smoothie</h3>
+                                        <span class="price-line">$7</span>
+                                    </div>
+                                    <p>Fresh mango blended with yogurt and a hint of honey for a refreshing drink.</p>
+                                </div>
+                            </div>
+                            <div class="separator2"></div>
+                            <!-- Item 2 -->
+                            <div class="item">
+                                <img src="images/menu-1.png" alt="Drink" class="food-image">
+                                <div class="text-contents">
+                                    <div class="name-and-price">
+                                        <h3>Classic Mojito</h3>
+                                        <span class="price-line">$10</span>
+                                    </div>
+                                    <p>A timeless cocktail with mint, lime, sugar, and white rum, topped with soda water.</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <div class="item-group">
+                        <!-- Item 3 -->
+                        <div class="item">
+                            <img src="images/menu-1.png" alt="Drink" class="food-image">
+                            <div class="text-contents">
+                                <div class="name-and-price">
+                                    <h3>Iced Caramel Macchiato</h3>
+                                    <span class="price-line">$8</span>
+                                </div>
+                                <p>Espresso mixed with vanilla syrup, milk, and drizzled with caramel for a sweet treat.</p>
+                            </div>
+                        </div>
+                        <div class="separator2"></div>
+                        <!-- Item 4 -->
+                        <div class="item">
+                            <img src="images/menu-1.png" alt="Drink" class="food-image">
+                            <div class="text-contents">
+                                <div class="name-and-price">
+                                    <h3>Fresh Lemonade</h3>
+                                    <span class="price-line">$5</span>
+                                </div>
+                                <p>Classic homemade lemonade, perfectly balanced between sweet and tart.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-group">
+                        <!-- Item 5 -->
+                        <div class="item">
+                            <img src="images/menu-1.png" alt="Drink" class="food-image">
+                            <div class="text-contents">
+                                <div class="name-and-price">
+                                    <h3>Strawberry Daiquiri</h3>
+                                    <span class="price-line">$12</span>
+                                </div>
+                                <p>Frozen delight with strawberries, rum, lime juice, and sugar, served icy cold.</p>
+                            </div>
+                        </div>
+                        <div class="separator2"></div>
+                        <!-- Item 6 -->
+                        <div class="item">
+                            <img src="images/menu-1.png" alt="Drink" class="food-image">
+                            <div class="text-contents">
+                                <div class="name-and-price">
+                                    <h3>Chai Latte</h3>
+                                    <span class="price-line">$6</span>
+                                </div>
+                                <p>Aromatic blend of black tea, spices, and milk, a perfect warming beverage.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+
+                <!-- Salad Menu  -->
+                <div id="salad-menu" class="menu-content" style="display: none;">
+                    <div class="item-group">
+                        <!-- Item 1 -->
+                        <div class="item">
+                            <img src="images/menu-1.png" alt="Salad" class="food-image">
+                            <div class="text-contents">
+                                <div class="name-and-price">
+                                    <h3>Caesar Salad</h3>
+                                    <span class="price-line">$11</span>
+                                </div>
+                                <p>Classic Caesar with romaine lettuce, Parmesan cheese, croutons, and Caesar dressing.</p>
+                            </div>
+                        </div>
+                        <div class="separator2"></div>
+                        <!-- Item 2 -->
+                        <div class="item">
+                            <img src="images/menu-1.png" alt="Salad" class="food-image">
+                            <div class="text-contents">
+                                <div class="name-and-price">
+                                    <h3>Greek Salad</h3>
+                                    <span class="price-line">$10</span>
+                                </div>
+                                <p>Fresh cucumbers, tomatoes, red onions, olives, and feta cheese with olive oil dressing.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-group">
+                        <!-- Item 3 -->
+                        <div class="item">
+                            <img src="images/menu-1.png" alt="Salad" class="food-image">
+                            <div class="text-contents">
+                                <div class="name-and-price">
+                                    <h3>Quinoa Salad</h3>
+                                    <span class="price-line">$13</span>
+                                </div>
+                                <p>Hearty quinoa mixed with bell peppers, beans, corn, and a zesty lime dressing.</p>
+                            </div>
+                        </div>
+                        <div class="separator2"></div>
+                        <!-- Item 4 -->
+                        <div class="item">
+                            <img src="images/menu-1.png" alt="Salad" class="food-image">
+                            <div class="text-contents">
+                                <div class="name-and-price">
+                                    <h3>Avocado Salad</h3>
+                                    <span class="price-line">$14</span>
+                                </div>
+                                <p>Chunks of ripe avocado, cherry tomatoes, and mixed greens with a lemon vinaigrette.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Seafood Menu  -->
+                <div id="seafood-menu" class="menu-content" style="display: none;">
+                    <div class="item-group">
+                        <!-- Item 1 -->
+                        <div class="item">
+                            <img src="images/menu-1.png" alt="Seafood" class="food-image">
+                            <div class="text-contents">
+                                <div class="name-and-price">
+                                    <h3>Grilled Salmon</h3>
+                                    <span class="price-line">$22</span>
+                                </div>
+                                <p>Perfectly grilled salmon served with a side of asparagus and lemon butter.</p>
+                            </div>
+                        </div>
+                        <div class="separator2"></div>
+                        <!-- Item 2 -->
+                        <div class="item">
+                            <img src="images/menu-1.png" alt="Seafood" class="food-image">
+                            <div class="text-contents">
+                                <div class="name-and-price">
+                                    <h3>Shrimp Scampi</h3>
+                                    <span class="price-line">$20</span>
+                                </div>
+                                <p>Sautéed shrimp in a garlic butter sauce, served over a bed of linguine pasta.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-group">
+                        <!-- Item 3 -->
+                        <div class="item">
+                            <img src="images/menu-1.png" alt="Seafood" class="food-image">
+                            <div class="text-contents">
+                                <div class="name-and-price">
+                                    <h3>Lobster Bisque</h3>
+                                    <span class="price-line">$18</span>
+                                </div>
+                                <p>Creamy and rich lobster bisque with a hint of sherry, served with fresh bread.</p>
+                            </div>
+                        </div>
+                        <div class="separator2"></div>
+                        <!-- Item 4 -->
+                        <div class="item">
+                            <img src="images/menu-1.png" alt="Seafood" class="food-image">
+                            <div class="text-contents">
+                                <div class="name-and-price">
+                                    <h3>Crab Cakes</h3>
+                                    <span class="price-line">$21</span>
+                                </div>
+                                <p>Delicious crab cakes made with fresh crab meat and spices, served with a tangy remoulade sauce.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            
+            
+
+            </main>
+
+        </main>
+        <div id="extension"></div>
+        <script src="menu-script.js"></script>
     </body>
 </html>
