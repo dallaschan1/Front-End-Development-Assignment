@@ -1,0 +1,475 @@
+/* Slider Section: Full-screen background image slider styling */
+#slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    opacity: 0.9;
+}
+
+/* Image Styling: Default styles for slider images, initially hidden */
+.image {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -100;
+    transition: transform 2s ease-in-out, opacity 1s ease-in-out; /* Merged transition for zoom and fade */
+}
+.image.active {
+    display: block;
+}
+.image.zooming {
+    transform: scale(1.1); 
+}
+
+/* Text Overlay: Styles for text displayed over the slider */
+#text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-family:'Times New Roman', Times, serif;
+}
+
+/* Text Content Alignment */
+.text-content {
+    text-align: center;
+}
+
+/* Text Visibility: Controls visibility of different text layers */
+.upper-text, .lower-text, .lowest-text, .highest {
+    display: none;
+    margin: 0;
+}
+.active .upper-text, .active .lower-text, .active .lowest-text, .active .highest {
+    display: block;
+}
+
+.highest {
+    font-family: 'Forum', cursive;
+    font-size: calc(0.6em + 0.2vw);
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    color: hsl(38, 61%, 73%); /* Gold Crayola */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.upper-text, .lower-text {
+    font-family: 'Forum', cursive;
+    color: hsla(0, 0%, 100%, 1); /* White */
+}
+.upper-text {
+    font-size: calc(1.3rem + 6.7vw);
+    margin-bottom: 0;
+}
+.lower-text {
+    font-size: calc(1.3rem + 6.7vw);
+    margin-top: -20px;
+}
+
+/* Active Paragraph Styling: Shows only the active paragraph */
+#text p.active {
+    display: block;
+}
+
+/* Button Styling */
+#reservation-button {
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    letter-spacing: 3px;
+    display: inline-block; 
+    padding: 10px 20px;
+    margin-top: 20px; 
+    background-color: transparent; 
+    color: hsl(38, 70%, 81%); 
+    border: solid;
+    border-color: hsl(38, 61%, 73%);
+    border-width: 4px;
+    cursor: pointer;
+    font-size: 25px; /* Merged font-size */
+    width: 30%;
+    height: 100px;
+    z-index: 2;
+    transition: 0.4s ease-in;
+}
+#reservation-button:hover{
+  color: black;
+  background-color: hsl(38, 61%, 73%);
+}
+
+/* Diamond Buttons Styling */
+.diamond-button1, .diamond-button2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    background-color: rgba(240, 240, 240, 0.7);
+    border: solid 1px rgba(240, 240, 240, 0.7);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10; 
+    transition: background-color 0.3s ease;
+}
+#prev { left: 2%; }
+#next { right: 2%; }
+
+.diamond-button1 i, .diamond-button2 i {
+    color: hsl(38, 67%, 57%);
+    font-size: 20px;
+    padding-right: 2px;
+    transition: background-color 0.3s ease;
+}
+
+.diamond-button1:hover, .diamond-button2:hover {
+    background-color: rgb(228, 197, 144);
+    border: solid 1px rgb(228, 197, 144);
+}
+
+.diamond-button1:hover i, .diamond-button2:hover i {
+    color: black;
+}
+
+/* Body Styling */
+body {
+    background-color: white;
+}
+
+/* Logo Styling */
+.logo {
+    width: 200px;
+    height: auto;
+    padding-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    margin-left: 2%;
+}
+
+/* Header Styling */
+header {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+/* Icon Styling */
+.icon, .icons {
+    background: none;
+    width: 20px;
+    height: 20px;
+    padding-right: 0.01%;
+    padding-left: 20px;
+    flex-shrink: 0;
+    filter: invert(100%);
+}
+
+/* Navigation Bar Styling */
+.navigation {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    justify-content: end;
+    margin: 0 2%;
+}
+.navigation a {
+    margin-left: 2%;
+    font-size: calc((6rem + 4vw) / 8.85);
+    color: white; /* Default color */
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative; /* Added for positioning the ::after pseudo-element */
+    z-index: 10;
+}
+.navigation a.active {
+    color: hsl(38, 61%, 73%); /* Active link color */
+}
+.navigation a:not(.active):hover {
+    color: hsla(38, 61%, 73%, 0.737); /* Hover color for non-active links */
+}
+.navigation a.active::after, .navigation a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    width: 100%;
+    height: 2px;
+    background-color: hsl(38, 61%, 73%);
+    box-shadow: 0 3px hsl(38, 61%, 73%);
+}
+.navigation a:not(.active)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    width: 0; /* Initially no width */
+    height: 2px;
+    background-color: hsl(38, 61%, 73%, 0);
+    box-shadow: 0 3px hsl(38, 61%, 73%, 0);
+    transition: width 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+}
+.navigation a:not(.active):hover::after {
+    width: 100%; /* Full width on hover */
+    background-color: hsl(38, 61%, 73%, 0.737);
+    box-shadow: 0 3px hsl(38, 61%, 73%, 0.737);
+}
+
+/* Top Bar Styling */
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between groups */
+    margin-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px; /* Added right padding */
+}
+.top-group, .top-group2 {
+    display: flex;
+    align-items: center;
+    gap: 1.57894vw;
+}
+.top .topbar-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.top a {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: calc((2.5rem + 5.31vw) / 8.85);
+    padding-top: 2px;
+}
+
+/* Diamond Separator Styling */
+.diamond-separator {
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    border: 2px solid hsl(38, 61%, 73%);
+    transform: rotate(45deg);
+    margin: 0 10px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 576px) {
+    .logo {
+        width: 100px;
+    }
+    .hamburger-menu {
+        font-size: 10px;
+    }
+    .top {
+        display: none;
+    }
+    #line {
+        opacity: 0;
+        width: 0;
+    }
+    #reservation-button {
+        font-size: 15px;
+        width: calc(200px + 12vw);
+        height: 60px;
+    }
+    .diamond-button1, .diamond-button2 {
+        display: none;
+    }
+    .lower-text {
+        margin-top: -5px;
+    }
+    .highest{
+        font-size: calc(0.6em + 0.1vw);
+    }
+}
+/* Media Queries Continued */
+@media screen and (min-width: 576.1px) and (max-width: 768px) {
+    .top {
+        display: none;
+    }
+    #line {
+        opacity: 0;
+        width: 0;
+    }
+    #reservation-button {
+        font-size: 19px;
+        width: 300px;
+    }
+}
+
+/* After this is the CSS Styling for Menu.html */
+.menu-selector.active {
+    color: hsl(38, 67%, 57%);
+}
+
+.hamburger-menu, .close-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hamburger-menu {
+    z-index: 1001;
+}
+
+/* Additional combined rules based on your provided CSS */
+
+
+/* Here is Login/Sign up css*/
+#login-signup {
+    background-color: rgba(0, 0, 0, 0.9);
+    background-image: url(images/footer-form-bg.png);
+    color: white;
+}
+.signup-form h2{
+    padding-left: 40%;
+    padding-bottom: 50px;
+}
+.signup-form {
+    max-width: 500px;
+    margin: auto;
+    padding: 60px;
+    border: 4px solid hsl(38, 61%, 73%);
+    margin-top: 70px;
+    background-color: rgba(255, 255, 255, 0.274);
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 70px;
+    flex-basis: 48%; /* Adjusts the width of each field */
+}
+
+.form-group.full-width {
+    flex-basis: 100%;
+}
+
+.form-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 20px;
+    color: #c9c8c8;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.form-group input {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 20px;
+    color: white;
+    background-color: transparent;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-bottom: 2px solid #333;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    font-size: 14px;
+    color: 333;
+    transform: translateY(-35px);
+}
+
+.signup-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.signup-button:hover {
+    background-color: #45a049;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    
+}
+
+
+/* Adjust the form group containing the file input and label */
+.form-groups {
+    /* If you have flex styles applied to form-group, remove them */
+    /* and use display: block; instead */
+    display: block;
+    position: relative;
+    margin-bottom: 20px;
+}
+/* Style the label to look like an input field */
+.file-input-label {
+    display: inline-block; /* Inline block to align with the preview */
+    border-bottom: 2px solid #ccc;
+    padding: 12px 0;
+    color: #c2c1c1;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px; /* Match other input sizes */
+    width: 100%; /* Adjust width to leave space for image preview */
+}
+
+/* Style for the image preview */
+.image-preview {
+    width: 230px; /* Adjust size as needed */
+    height: 170px; /* Adjust size as needed */
+    
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #cac8c8;
+    display: inline-block; /* Inline block to align with the label */
+     /* Aligns with the label */
+    margin-left: 10px;
+    position: absolute; /* Position absolute to place beside the label */
+    right: 0; /* Align to the right side of the form-group */
+    top: -140px; /* Adjust vertical position to align with the label */
+}
+
+/* ... Rest of your CSS ... */
+.image-preview h1{
+    padding-top: 40px;
+}
+.image-preview {
+    /* ... existing styles ... */
+    display: flex;
+    justify-content: center;
+    
+    color: white; /* or any color you prefer */
+}
+
+.image-preview.has-image h1 {
+    display: none;
+}

@@ -1,0 +1,423 @@
+.logo {
+    width: 200px;
+    height: auto;
+    padding-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    margin-left: 2%;
+}
+
+/* Header Styling */
+header {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+/* Icon Styling */
+.icon, .icons {
+    background: none;
+    width: 20px;
+    height: 20px;
+    padding-right: 0.01%;
+    padding-left: 20px;
+    flex-shrink: 0;
+    filter: invert(100%);
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    justify-content: end;
+    margin: 0 2%;
+}
+
+/* Navigation Link Styling */
+.navigation a {
+    margin-left: 2%;
+    font-size: calc((3rem + 6.7vw) / 8.85);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    z-index: 10;
+}
+.button-Reservation {
+    flex-shrink: 0;
+    margin-left: 0%;
+    width: 200px;
+    height: 60px;
+    background: hsl(38, 61%, 73%);
+    cursor: pointer;
+    font-size: 1.1em;
+    color: black;
+    margin-right: 2%;
+    z-index: 2;
+    font-family: 'DM-Sans';
+    font-weight:400;
+    font-size: calc(10px + 0.3vw);
+}
+
+.navigation a {
+    margin-left: 2%;
+    font-size: calc((6rem + 4vw) / 8.85);
+    color: white; /* Default color */
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative; /* Added for positioning the ::after pseudo-element */
+    z-index: 10;
+}
+
+/* Active Navigation Link Styling */
+.navigation a.active {
+    color: hsl(38, 61%, 73%); /* Active link color */
+}
+
+.navigation a.active::after, .navigation a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    width: 100%;
+    height: 2px;
+    background-color: hsl(38, 61%, 73%);
+    box-shadow: 0 3px hsl(38, 61%, 73%);
+}
+
+/* Hover Styling for Non-active Links */
+.navigation a:not(.active):hover {
+    color: hsla(38, 61%, 73%, 0.737); /* Hover color for non-active links */
+    
+}
+
+/* Reset the ::after pseudo-element for non-active links */
+.navigation a:not(.active)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    width: 0; /* Initially no width */
+    height: 2px;
+    background-color: hsl(38, 61%, 73%, 0);
+    box-shadow: 0 3px hsl(38, 61%, 73%, 0);
+    transition: width 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover effect for the underline on non-active links */
+.navigation a:not(.active):hover::after {
+    width: 100%; /* Full width on hover */
+    background-color: hsl(38, 61%, 73%, 0.737);
+    box-shadow: 0 3px hsl(38, 61%, 73%, 0.737);
+}
+
+.menu-selector.active {
+    color: hsl(38, 67%, 57%)
+}
+
+.hamburger-menu, .close-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 10px;
+
+    
+    z-index: 1001;
+}
+.button-Reservation-menu {
+    display: none; 
+}
+
+
+@media screen and (max-width: 576px) {
+    .button-Reservation {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
+    }
+
+    .navigation {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Start off-screen */
+        width: 60%;
+        height: 100%;
+        background: black;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        transition: left 0.3s;
+        justify-content: start;
+        padding-top: 20px;
+    }
+
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 50px;
+        right: 30px;
+        z-index: 1002;
+    }
+    .navigation a.active {
+        color: hsl(38, 73%, 59%);
+        font-weight: bolder; /* Active link color */
+    }
+    .logo-in-menu {
+        display: block;
+        margin-top: 70px;
+        margin-left: auto;
+        margin-right: auto; /* Adjust as needed */
+        width: 50%; 
+        margin-bottom: 80px;/* Adjust size as needed */
+    }
+
+    .navigation a {
+        padding: 10px 20px;
+        margin: 5px 0;
+        display: block;
+        color: white;
+        text-align: left;
+        width: 70%;
+        font-family: 'DM-Sans', sans-serif;
+        letter-spacing: 2px;
+    }
+    .navigation a.active::after, .navigation a:hover::after {
+        content: '';
+        position: absolute;
+        left: 18px;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: hsl(38, 61%, 73%);
+        box-shadow: 0 3px transparent;
+    }
+    
+    /* Hover Styling for Non-active Links */
+    .navigation a:not(.active):hover {
+        color: hsla(38, 61%, 73%, 0.737); /* Hover color for non-active links */
+        
+    }
+    
+    /* Reset the ::after pseudo-element for non-active links */
+    .navigation a:not(.active)::after {
+        content: '';
+        position: absolute;
+        left: 18px;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: hsl(38, 61%, 73%);
+        box-shadow: 0 3px transparent;
+    }
+    
+    /* Hover effect for the underline on non-active links */
+    .navigation a:not(.active):hover::after {
+        
+        box-shadow: 0 3px transparent;
+    }
+    
+    .navigation .button-Reservation-menu {
+        display: block; /* Show the button inside the menu */
+    }
+    .navigation .button-Reservation-menu {
+        display: block; /* Show the button inside the menu */
+        margin-top: 30px;
+        margin-left: 30px;
+        width: 80%;
+        height: 60px;
+        background: transparent;
+        border: 3px solid hsl(38, 61%, 73%);
+        cursor: pointer;
+        font-size: 1.1em;
+        color: hsl(38, 61%, 73%);
+        margin-right: 2%;
+        z-index: 2;
+        font-family: 'DM-Sans', sans-serif;
+        font-weight:400;
+        font-size: calc(15px + 0.3vw);
+        transition: 0.3s ease-in;
+        z-index: 1000;
+    }
+
+    .navigation .button-Reservation-menu:hover {
+        display: block; /* Show the button inside the menu */
+        margin-top: 30px;
+        margin-left: 30px;
+        width: 80%;
+        height: 60px;
+        background: hsl(38, 61%, 73%);
+        cursor: pointer;
+        font-size: 1.1em;
+        color: black;
+        margin-right: 2%;
+        z-index: 2;
+        font-family: 'DM-Sans', sans-serif;
+        font-weight:400;
+        font-size: calc(15px + 0.3vw);
+        z-index: 1000;
+    }
+
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1002;
+        background-color: transparent;
+        color: white;
+        border: transparent;
+    }
+
+
+    
+
+}
+
+
+@media screen and (min-width: 576.1px) and (max-width: 768px) {
+    .button-Reservation {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
+    }
+
+    .navigation {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Start off-screen */
+        width: 60%;
+        height: 100%;
+        background: black;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        transition: left 0.3s;
+        justify-content: start;
+        z-index: 1000;
+        padding-top: 20px;
+    }
+
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1002;
+        background-color: transparent;
+        color: white;
+        border: transparent;
+    }
+
+    .navigation a.active {
+        color: hsl(38, 73%, 59%);
+        font-weight: bolder; /* Active link color */
+    }
+    
+    .logo-in-menu {
+        display: block;
+        margin-top: 70px;
+        margin-left: auto;
+        margin-right: auto; /* Adjust as needed */
+        width: 50%; 
+        margin-bottom: 80px;/* Adjust size as needed */
+    }
+
+    .navigation a {
+        padding: 10px 20px;
+        margin: 5px 0;
+        padding-left: 27px;
+        display: block;
+        color: white;
+        text-align: left;
+        width: 70%;
+        font-family: 'DM-Sans', sans-serif;
+        letter-spacing: 2px;
+    }
+    .navigation a.active::after, .navigation a:hover::after {
+        content: '';
+        position: absolute;
+        left: 28px;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: hsl(38, 61%, 73%);
+        box-shadow: 0 3px transparent;
+    }
+    
+    /* Hover Styling for Non-active Links */
+    .navigation a:not(.active):hover {
+        color: hsla(38, 61%, 73%, 0.737); /* Hover color for non-active links */
+        
+    }
+    
+    /* Reset the ::after pseudo-element for non-active links */
+    .navigation a:not(.active)::after {
+        content: '';
+        position: absolute;
+        left: 28px;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: hsl(38, 61%, 73%);
+        box-shadow: 0 3px transparent;
+    }
+    
+    /* Hover effect for the underline on non-active links */
+    .navigation a:not(.active):hover::after {
+        
+        box-shadow: 0 3px transparent;
+    }
+    .navigation .button-Reservation-menu {
+        display: block; /* Show the button inside the menu */
+        margin-top: 30px;
+        margin-left: 30px;
+        width: 80%;
+        height: 60px;
+        background: transparent;
+        border: 3px solid hsl(38, 61%, 73%);
+        cursor: pointer;
+        font-size: 1.1em;
+        color: hsl(38, 61%, 73%);
+        margin-right: 2%;
+        z-index: 2;
+        font-family: 'DM-Sans', sans-serif;
+        font-weight:400;
+        font-size: calc(15px + 0.3vw);
+        transition: 0.3s ease-in;
+        z-index: 1000;
+    }
+
+    .navigation .button-Reservation-menu:hover {
+        display: block; /* Show the button inside the menu */
+        margin-top: 30px;
+        margin-left: 30px;
+        width: 80%;
+        height: 60px;
+        background: hsl(38, 61%, 73%);
+        cursor: pointer;
+        font-size: 1.1em;
+        color: black;
+        margin-right: 2%;
+        z-index: 2;
+        font-family: 'DM-Sans', sans-serif;
+        font-weight:400;
+        font-size: calc(15px + 0.3vw);
+        z-index: 1000;
+    }
+    
+}
+
