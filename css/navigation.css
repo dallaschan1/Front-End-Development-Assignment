@@ -138,8 +138,50 @@ header {
     display: none; 
 }
 
+/*-- styles for the visit Us section in the Hamburg Nav --*/
+
+.visit-us {
+    display: none; /* Hidden by default */
+    /* Other styles for the visit-us section */
+    color: white;
+    margin-left: 40px;
+    margin-top: 100px;
+    font-weight:lighter;
+}
+
+.visit-us h3{
+    font-size: 60px;
+    margin-bottom: 0px;
+    text-decoration: underline;
+}
+
+.visit-us p{
+    font-size: 20px;
+    font-family: 'DM-Sans', sans-serif;
+    color: rgb(189, 189, 189);
+    text-decoration: none;
+}
+.navigation .visit-us a {
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'DM-Sans', sans-serif;
+    color: rgb(189, 189, 189);
+    border: transparent;
+    
+    text-decoration: none !important;
+    color: inherit; /* Optional: to inherit text color from parent */
+
+    
+    /* Other styles for the anchor tag */
+}
+
+
 
 @media screen and (max-width: 576px) {
+    .visit-us {
+        display: block; /* Display when the menu is open */
+        /* Other responsive styles for the visit-us section */
+    }
     .button-Reservation {
         display: none;
     }
@@ -277,16 +319,40 @@ header {
         z-index: 1002;
         background-color: transparent;
         color: white;
-        border: transparent;
+        border: 1px solid white;
+        border-radius: 50%;
     }
 
 
-    
+    .navigation .visit-us a {
+        text-decoration: none;
+        font-size: 20px;
+        font-family: 'DM-Sans', sans-serif;
+        color: rgb(189, 189, 189);
+        border: transparent;
+        
+        text-decoration: none !important;
+        
+    }
+    .navigation .visit-us a.active::after, .navigation .visit-us a:hover::after {
+        content: '';
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 0px;
+        background-color: transparent;
+        box-shadow: 0 3px transparent;
+    }
 
 }
 
 
 @media screen and (min-width: 576.1px) and (max-width: 768px) {
+    .visit-us {
+        display: block; /* Display when the menu is open */
+        /* Other responsive styles for the visit-us section */
+    }
     .button-Reservation {
         display: none;
     }
@@ -418,6 +484,58 @@ header {
         font-size: calc(15px + 0.3vw);
         z-index: 1000;
     }
+    .navigation .visit-us a {
+   
+        font-size: 20px;
+        font-family: 'DM-Sans', sans-serif;
+        color: rgb(189, 189, 189);
+        border: transparent;
+        text-decoration: none !important;
+        width: 100%;
+        
     
+        
+        
+    }
+
+    .navigation .visit-us a {
+        padding: 0;
+        margin: 0;
+        padding-left: 0px;
+        margin-top: 30px;
+        
+        
+        text-align: left;
+       
+        font-family: 'DM-Sans', sans-serif;
+        letter-spacing: 0px;
+    }
+    .navigation .visit-us a.active::after, .navigation .visit-us a:hover::after {
+        content: '';
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 0px;
+        background-color: transparent;
+        box-shadow: 0 3px transparent;
+    }
+    
+    .navigation .visit-us a:not(.active):hover {
+        color: rgb(189, 189, 189); /* Hover color for non-active links */
+        
+    }
+    
+    /* Reset the ::after pseudo-element for non-active links */
+    .navigation a:not(.active)::after {
+        content: '';
+        
+        
+        
+        width: 100%;
+        
+        background-color: transparent;
+        box-shadow: 0  transparent;
+    }
 }
 
