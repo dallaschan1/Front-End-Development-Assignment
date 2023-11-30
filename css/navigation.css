@@ -142,8 +142,7 @@ header {
 /*-- styles for the visit Us section in the Hamburg Nav --*/
 
 .visit-us {
-    display: none; /* Hidden by default */
-    /* Other styles for the visit-us section */
+    display: none; 
     color: white;
     margin-left: 40px;
     margin-top: 100px;
@@ -369,7 +368,7 @@ header {
 @media screen and (min-width: 576.1px) and (max-width: 768px) {
     .visit-us {
         display: block; /* Display when the menu is open */
-        /* Other responsive styles for the visit-us section */
+      
     }
     .button-Reservation {
         display: none;
