@@ -10,4 +10,13 @@ document.querySelector('.close-menu').addEventListener('click', function() {
 
 
 
- 
+document.addEventListener('DOMContentLoaded', function () {
+    var navLinks = document.querySelectorAll('.navigation a'); // Select all nav links
+    var currentUrl = window.location.href; // Get the current URL
+
+    navLinks.forEach(function(link) {
+        if (currentUrl.includes(link.href)) {
+            link.classList.add('active'); // Add 'active' class if URLs match
+        }
+    });
+});

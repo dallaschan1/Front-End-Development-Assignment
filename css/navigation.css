@@ -129,7 +129,8 @@ header {
     display: none;
     font-size: 30px;
     cursor: pointer;
-    margin-right: 10px;
+    margin-top: 10px;
+    margin-right: 20px;
 
     
     z-index: 1001;
@@ -150,37 +151,34 @@ header {
 }
 
 .visit-us h3{
-    font-size: 60px;
+    font-size: 30px;
     margin-bottom: 0px;
     text-decoration: underline;
+    padding-left: auto;
+
 }
 
 .visit-us p{
-    font-size: 20px;
+    font-size: 14px;
     font-family: 'DM-Sans', sans-serif;
     color: rgb(189, 189, 189);
     text-decoration: none;
 }
 .navigation .visit-us a {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 14px;
     font-family: 'DM-Sans', sans-serif;
     color: rgb(189, 189, 189);
     border: transparent;
-    
     text-decoration: none !important;
-    color: inherit; /* Optional: to inherit text color from parent */
-
-    
-    /* Other styles for the anchor tag */
+    color: inherit; 
 }
 
 
 
 @media screen and (max-width: 576px) {
     .visit-us {
-        display: block; /* Display when the menu is open */
-        /* Other responsive styles for the visit-us section */
+        display: block;
     }
     .button-Reservation {
         display: none;
@@ -203,6 +201,7 @@ header {
         transition: left 0.3s;
         justify-content: start;
         padding-top: 20px;
+        z-index: 1000;
     }
 
     .close-menu {
@@ -214,15 +213,16 @@ header {
     }
     .navigation a.active {
         color: hsl(38, 73%, 59%);
-        font-weight: bolder; /* Active link color */
+        font-weight: bolder; 
     }
     .logo-in-menu {
         display: block;
         margin-top: 70px;
         margin-left: auto;
-        margin-right: auto; /* Adjust as needed */
+        margin-right: auto;
         width: 50%; 
-        margin-bottom: 80px;/* Adjust size as needed */
+        margin-bottom: 80px;
+        z-index: 1000;
     }
 
     .navigation a {
@@ -246,13 +246,13 @@ header {
         box-shadow: 0 3px transparent;
     }
     
-    /* Hover Styling for Non-active Links */
+  
     .navigation a:not(.active):hover {
-        color: hsla(38, 61%, 73%, 0.737); /* Hover color for non-active links */
+        color: hsla(38, 61%, 73%, 0.737); 
         
     }
     
-    /* Reset the ::after pseudo-element for non-active links */
+    
     .navigation a:not(.active)::after {
         content: '';
         position: absolute;
@@ -325,12 +325,14 @@ header {
 
 
     .navigation .visit-us a {
+        margin-left: 9;
+        padding-left: 0;
+        padding-bottom: 0;
         text-decoration: none;
-        font-size: 20px;
+        font-size: 14px;
         font-family: 'DM-Sans', sans-serif;
-        color: rgb(189, 189, 189);
+        color: lightcyan;
         border: transparent;
-        
         text-decoration: none !important;
         
     }
@@ -343,6 +345,22 @@ header {
         height: 0px;
         background-color: transparent;
         box-shadow: 0 3px transparent;
+    }
+    .navigation .visit-us a:not(.active):hover {
+        color: rgb(189, 189, 189); /* Hover color for non-active links */
+        
+    }
+    
+    /* Reset the ::after pseudo-element for non-active links */
+    .navigation a:not(.active)::after {
+        content: '';
+        
+        
+        
+        width: 100%;
+        
+        background-color: transparent;
+        box-shadow: 0  transparent;
     }
 
 }
@@ -486,7 +504,7 @@ header {
     }
     .navigation .visit-us a {
    
-        font-size: 20px;
+        font-size: 14px;
         font-family: 'DM-Sans', sans-serif;
         color: rgb(189, 189, 189);
         border: transparent;

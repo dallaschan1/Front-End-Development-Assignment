@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
     justify-content: center;
     background-image: url(/images/form-pattern.png);
    
