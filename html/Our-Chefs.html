@@ -1,91 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book</title>
-    <link rel="stylesheet" href="/css/chefs.css">
-    <script src="https://kit.fontawesome.com/b0f29e9bfe.js" crossorigin="anonymous"></script>
-    <script defer src="/js/chefs-script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/normalize.css" rel="stylesheet">
+    <link href="/css/chefs.css" rel="stylesheet">
+    <link  href="/css/navigation.css" rel = "stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+    
 </head>
 <body>
+    <header>
+        <img class="logo" src="/images/logo.svg" alt="Restaurant logo"> 
+        <button class="hamburger-menu">☰</button> 
+        <nav class="navigation">
+            <button class="close-menu">X</button> 
+            <img class="logo-in-menu" src="/images/logo.svg" alt="Restaurant logo" hidden> 
+            <a href="index.html">Home</a>
+            <a href="Menu.html">Menu</a>
+            <a href="Our-Chefs.html" class="active">Chefs</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <button class="button-Reservation-menu">Make a Reservation</button>
+            <div class="visit-us">
+                <h3>Visit Us</h3>
+                <a href="https://maps.app.goo.gl/DaQyjKibYgyqRcD26">69 Bussorah St, Singapore 199482</a>
     
-    <button id="prev-btn">
-        <i class="fas fa-arrow-circle-left"></i>
-    </button>
+                <p>Daily: 1pm to 10.00pm</p>
+                <p>booking@restaurant.com</p>
+            </div>
+        </nav>
+        </nav>
+        <button class="button-Reservation">Make a Reservation</button>
+    </header>
 
-    <!-- The Book -->
-    
-    <div id="chefs" class="chefs">
-        <div id="p0" class="pages">
-            <div class="front">
-                <div id="f0" class="chef-image">
-                    <h1 class="book-title">Little Dog</h1>
-                    <img class="cover-img" src="./dog.jpg" alt="dog">
-                </div>
-            </div>
-            <div class="back">
-                <div id="b0" class="chef-image">
-                    <h1 class="book-title">Little Dog</h1>
-                    <img class="cover-img" src="./dog.jpg" alt="dog">
-                </div>
-            </div>
-        </div>
-        
-        <!-- Paper 1 -->
-        <div id="p1" class="pages">
-            <div class="front">
-                <div id="f1" class="chef-image">
-                    <h1 class="book-title">Little Dog</h1>
-                    <img class="cover-img" src="./dog.jpg" alt="dog">
-                </div>
-            </div>
-            <div class="back">
-                <div id="b1" class="back-content">
-                    <h2>Some Intro</h2>
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Paper 2 -->
-        <div id="p2" class="pages">
-            <div class="front">
-                <div id="f2" class="chef-image">
-                    <h1>Some Cool Page</h1>
-                </div>
-            </div>
-            <div class="back">
-                <div id="b2" class="back-content">
-                    <h1>An Awesome Page</h1>
-                </div>
-            </div>
-        </div>
-        <!-- Paper 3 -->
-        <div id="p3" class="pages">
-            <div class="front">
-                <div id="f3" class="chef-image">
-                    <h1>An Amazing Page</h1>
-                </div>
-            </div>
-            <div class="back">
-                <div id="b3" class="back-content">
-                    <h1>The Good Bye</h1>
-                </div>
-            </div>
+<div id="carousel-container">
+    <div class="card">
+        <img class="images" src="https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2021/03/04/a06ffef30eb543ce904b76c5df31dd55_Mitou+Female+Chef+Asia+Michelin+Guide+Seoul.jpg">
+        <div class="text-content">
+        <div class="head-text-case1"></div>
+        <div class="body-text-case1"></div>
+        <button id="viewMenuButton">View Menu</button>
         </div>
     </div>
+    <div class="card" style="display: none;">
+        <img class="images" src="https://i.pinimg.com/originals/dd/97/3a/dd973ac116a977c8dd5296b0da504b8c.jpg">
+        <div class="text-content">
+            <div class="head-text-case2">Heading for Card 2</div>
+            <div class="body-text-case2">
+            </div>
+            <button id="viewMenuButton">View Menu</button>
 
-    <button id="next-btn">
-        <i class="fas fa-arrow-circle-right"></i>
-    </button>
+        </div>
+    </div>
+    <div class="card" style="display: none;">
+        <img class="images" src="https://imgv3.fotor.com/images/cover-photo-image/a-beautiful-girl-with-gray-hair-and-lucxy-neckless-generated-by-Fotor-AI.jpg">
+        <div class="text-content">
+            <div class="head-text-case3">Heading for Card 2</div>
+            <div class="body-text-case3">
+            </div>
+            <button id="viewMenuButton">View Menu</button>
 
+        </div>
+    </div>
+    
+</div>
+<div class="carousel-pagination"></div>
 
+<script src="/js/Navigation.js"></script>
+<script src="/js/chefs-script.js"></script>
 </body>
 </html>

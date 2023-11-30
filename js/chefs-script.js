@@ -1,92 +1,256 @@
-// References to DOM elements
-const prevBtn = document.querySelector('#prev-btn');
-const nextBtn = document.querySelector('#next-btn');
-const book = document.querySelector('#chefs');
 
-const paper0 = document.querySelector('#p0'); // Reference to the new homepage
-const paper1 = document.querySelector('#p1');
-const paper2 = document.querySelector('#p2');
-const paper3 = document.querySelector('#p3');
 
-// Event listeners
-prevBtn.addEventListener("click", goPrevious);
-nextBtn.addEventListener("click", goNext);
+const initialDelay = 3600;
+document.querySelectorAll('.card .text-content div').forEach(div => div.innerHTML = '');
+let currentIndex = 1; // Start with the first card
+let isSwiping = false; // Swipe lock flag
+let typingTimeout; // Store typing timeout ID
+const totalCards = document.querySelectorAll('.card').length;
+const paginationContainer = document.querySelector('.carousel-pagination');
+let isDragging = false;
+let startPos = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+const slider = document.getElementById('carousel-container');
+slider.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startPos = getPositionX(e);
+    slider.style.cursor = 'grabbing';
+});
 
-// Business Logic
-let currentState = 0; // Start with the homepage
-let numOfPapers = 4; // Including the new homepage
-let maxState = numOfPapers + 1;
+slider.addEventListener('mouseup', () => {
+    isDragging = false;
+    slider.style.cursor = 'grab';
+    handleSwipeEnd();
+});
 
-function openBook() {
-    book.style.transform = "translateX(50%)";
-    prevBtn.style.transform = "translateX(-180px)";
-    nextBtn.style.transform = "translateX(180px)";
+slider.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+        const currentPosition = getPositionX(e);
+        currentTranslate = prevTranslate + currentPosition - startPos;
+    }
+});
+
+slider.addEventListener('mouseleave', () => {
+    if (isDragging) {
+        isDragging = false;
+        handleSwipeEnd();
+    }
+});
+
+function getPositionX(event) {
+    return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
 }
 
-function closeBook(isFirstPage) {
-    if(isFirstPage) {
-        book.style.transform = "translateX(0%)";
+function handleSwipeEnd() {
+    
+    if (currentTranslate > 100) { // Swipe right threshold
+        handleSwipe('right');
+    } else if (currentTranslate < -100) { // Swipe left threshold
+        handleSwipe('left');
+    }
+    // Reset values
+    startPos = 0;
+    currentTranslate = 0;
+    prevTranslate = 0;
+}
+
+
+
+function updateActiveDot(index) {
+    document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+        if (i === index - 1) {
+            dot.classList.add('active-dot');
+        } else {
+            dot.classList.remove('active-dot');
+        }
+    });
+}
+// Create dots
+for (let i = 0; i < totalCards; i++) {
+    const dot = document.createElement('span');
+    dot.classList.add('carousel-dot');
+    if (i === 0) dot.classList.add('active-dot');
+    paginationContainer.appendChild(dot);
+}
+
+
+function clearTextContent() {
+    document.querySelectorAll('.head-text-case, .body-text-case').forEach(div => div.innerHTML = '');
+}
+function cancelOngoingTyping() {
+    if (typingTimeout) {
+        clearTimeout(typingTimeout);
+        typingTimeout = null;
+    }
+}
+
+function textTypingEffect(element, text, callback, i = 0, wordCount = 0) {
+    if (typingTimeout) clearTimeout(typingTimeout); 
+
+  
+    if (text[i] === '<') {
+       
+        const endOfTag = text.indexOf('>', i);
+        if (endOfTag !== -1) {
+            
+            element.innerHTML += text.slice(i, endOfTag + 1);
+            
+            i = endOfTag;
+        }
     } else {
-        book.style.transform = "translateX(100%)";
+        
+        element.innerHTML += text[i];
     }
-    prevBtn.style.transform = "translateX(0px)";
-    nextBtn.style.transform = "translateX(0px)";
+
+    
+    if (i < text.length - 1) {
+        typingTimeout = setTimeout(() => textTypingEffect(element, text, callback, i + 1, wordCount), 3);
+    } else if (callback) {
+        callback();
+    }
 }
 
-function goNext() {
-    if (currentState < maxState) {
-        switch (currentState) {
-            case 0:
-                openBook();
-                paper0.classList.add("flipped");
-                paper0.style.zIndex = 1;
-                break;
-            case 1:
-                paper1.classList.add("flipped");
-                paper1.style.zIndex = 2;
-                break;
-            case 2:
-                paper2.classList.add("flipped");
-                paper2.style.zIndex = 3;
-                break;
-            case 3:
-                closeBook(false);
-                paper3.classList.add("flipped");
-                paper3.style.zIndex = 4;
-                break;
-            default:
-                throw new Error("unknown state");
+
+function setupCardContent(index) {
+    cancelOngoingTyping();
+    clearTextContent();
+    let div, headdiv, heading, profileText, accoladesText, signatureDishText;
+    let button;
+
+    switch (index) {
+        case 1:
+            div = document.querySelector(".body-text-case1");
+        headdiv = document.querySelector(".head-text-case1");
+        heading = "Chef Amy Richardson";
+        profileText = `
+Amy Richardson, a luminary in the culinary world, has reshaped modern gastronomy with her innovative approach and exceptional skill. Trained at the distinguished Culinary Institute of America, Amy has consistently showcased her extraordinary prowess in the kitchen. With over 15 years of experience in prestigious kitchens around the globe, she's developed a unique culinary style that seamlessly blends traditional techniques with contemporary flavors.
+
+Her commitment to excellence is evident in her dedication to using only the finest, locally-sourced ingredients. Amy's cooking philosophy revolves around enhancing natural flavors while presenting dishes in an artistically sophisticated manner. Her meticulous attention to detail and relentless pursuit of perfection have been pivotal in elevating La Maison Gourmet to a Michelin-starred establishment.`;
+
+        accoladesText = `<span class="highlight-text">Accolades:<span> <br>
+- Michelin Star Award: La Maison Gourmet, under Amy's expert guidance, earned its first Michelin star in 2018, signifying her culinary mastery and innovation.<br>
+- James Beard Award for Best New Restaurant (2019): This prestigious award was a result of Amy's creative menu planning and exceptional culinary skills.<br>
+- Gourmet Magazine's Chef of the Year (2020): Amy was nationally recognized for her significant contributions to the culinary arts.<br>
+- Featured in 'Chefs of Tomorrow': Amy was highlighted in this documentary series that profiles the world's most influential chefs.<br>
+- Guest Judge on 'MasterChef': Amy has shared her culinary expertise on this popular cooking show, inspiring a new generation of chefs.`;
+
+        
+
+        break;
+        case 2:
+    div = document.querySelector(".body-text-case2");
+    headdiv = document.querySelector(".head-text-case2");
+    heading = "Chef John Doe";
+    profileText = `Profile: 
+    Amy Richardson, a luminary in the culinary world, has reshaped modern gastronomy with her innovative approach and exceptional skill. Trained at the distinguished Culinary Institute of America, Amy has consistently showcased her extraordinary prowess in the kitchen. With over 15 years of experience in prestigious kitchens around the globe, she's developed a unique culinary style that seamlessly blends traditional techniques with contemporary flavors.
+    
+    Her commitment to excellence is evident in her dedication to using only the finest, locally-sourced ingredients. Amy's cooking philosophy revolves around enhancing natural flavors while presenting dishes in an artistically sophisticated manner. Her meticulous attention to detail and relentless pursuit of perfection have been pivotal in elevating La Maison Gourmet to a Michelin-starred establishment.`;
+    
+            accoladesText = `Accolades:
+    - Michelin Star Award: La Maison Gourmet, under Amy's expert guidance, earned its first Michelin star in 2018, signifying her culinary mastery and innovation.
+    - James Beard Award for Best New Restaurant (2019): This prestigious award was a result of Amy's creative menu planning and exceptional culinary skills.
+    - Gourmet Magazine's Chef of the Year (2020): Amy was nationally recognized for her significant contributions to the culinary arts.
+    - Featured in 'Chefs of Tomorrow': Amy was highlighted in this documentary series that profiles the world's most influential chefs.
+    - Guest Judge on 'MasterChef': Amy has shared her culinary expertise on this popular cooking show, inspiring a new generation of chefs.`;
+    
+    break;
+
+        case 3:
+            div = document.querySelector(".body-text-case3");
+        headdiv = document.querySelector(".head-text-case3");
+        heading = "Chedsdsdardson";
+        profileText = `Profile: 
+Amy Richardson, a luminary in the culinary world, has reshaped modern gastronomy with her innovative approach and exceptional skill. Trained at the distinguished Culinary Institute of America, Amy has consistently showcased her extraordinary prowess in the kitchen. With over 15 years of experience in prestigious kitchens around the globe, she's developed a unique culinary style that seamlessly blends traditional techniques with contemporary flavors.
+
+Her commitment to excellence is evident in her dedication to using only the finest, locally-sourced ingredients. Amy's cooking philosophy revolves around enhancing natural flavors while presenting dishes in an artistically sophisticated manner. Her meticulous attention to detail and relentless pursuit of perfection have been pivotal in elevating La Maison Gourmet to a Michelin-starred establishment.`;
+
+        accoladesText = `Accolades:
+- Michelin Star Award: La Maison Gourmet, under Amy's expert guidance, earned its first Michelin star in 2018, signifying her culinary mastery and innovation.
+- James Beard Award for Best New Restaurant (2019): This prestigious award was a result of Amy's creative menu planning and exceptional culinary skills.
+- Gourmet Magazine's Chef of the Year (2020): Amy was nationally recognized for her significant contributions to the culinary arts.
+- Featured in 'Chefs of Tomorrow': Amy was highlighted in this documentary series that profiles the world's most influential chefs.
+- Guest Judge on 'MasterChef': Amy has shared her culinary expertise on this popular cooking show, inspiring a new generation of chefs.`;
+
+        
+
+        break;
+    }
+
+    if (headdiv) headdiv.innerHTML = '';
+    if (div) div.innerHTML = '';
+
+    button = document.querySelector(`.card:nth-child(${index}) button`);
+    if (button) {
+        button.style.display = 'none';
+    }
+
+    setTimeout(() => {
+        textTypingEffect(headdiv, heading, () => {
+            textTypingEffect(div, profileText, () => {
+                div.innerHTML += '<br><br>'; // Add space
+                textTypingEffect(div, accoladesText, () => {
+                    // Show the button after all text is typed
+                    if (button) {
+                        button.style.display = 'block';
+                    }
+                }, 0, 0);
+            }, 0, 0);
+        }, 0, 0);
+    }, initialDelay);
+}
+
+function handleSwipe(direction) {
+    if (isSwiping) return; // Check if already swiping
+    isSwiping = true; // Set swipe lock
+    const totalCards = 5; // Total number of cards
+    let nextIndex = currentIndex;
+
+    if (direction === 'left' && currentIndex < totalCards) {
+        nextIndex++;
+    } else if (direction === 'right' && currentIndex > 1) {
+        nextIndex--;
+    }
+
+    if (nextIndex !== currentIndex) {
+        // Hide current card and show next card
+        const currentCard = document.querySelector(`.card:nth-child(${currentIndex})`);
+        const nextCard = document.querySelector(`.card:nth-child(${nextIndex})`);
+
+        if (currentCard && nextCard) {
+            currentCard.style.display = 'none';
+            nextCard.style.display = 'flex';
+            
+            currentIndex = nextIndex;
+            setupCardContent(currentIndex);
+        } else {
+            console.error('Card elements not found:', currentCard, nextCard);
         }
-
-        currentState++;
     }
+    isSwiping = false;
+    updateActiveDot(currentIndex); 
 }
 
-function goPrevious() {
-    if (currentState > 0) {
-        switch (currentState) {
-            case 1:
-                closeBook(true);
-                paper0.classList.remove("flipped");
-                paper0.style.zIndex = 4;
-                break;
-            case 2:
-                openBook();
-                paper1.classList.remove("flipped");
-                paper1.style.zIndex = 3;
-                break;
-            case 3:
-                paper2.classList.remove("flipped");
-                paper2.style.zIndex = 2;
-                break;
-            case 4:
-                paper3.classList.remove("flipped");
-                paper3.style.zIndex = 1;
-                break;
-            default:
-                throw new Error("unknown state");
-        }
 
-        currentState--;
+// Touch event listeners for swipe detection
+let touchStartX = 0;
+let touchEndX = 100;
+
+document.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+}, false);
+
+document.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchEndX < touchStartX) {
+        handleSwipe('left');
+    } else if (touchEndX > touchStartX) {
+        handleSwipe('right');
     }
-}
+}, false);
+
+setupCardContent(currentIndex);
+updateActiveDot(currentIndex);  
+document.getElementById('viewMenuButton').addEventListener('click', function() {
+    window.location.href = 'Menu.html';
+});
