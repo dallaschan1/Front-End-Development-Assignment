@@ -7,7 +7,7 @@ function loadNavigation() {
             <button class="close-menu">X</button> 
             <img class="logo-in-menu" src="/images/logo.svg" alt="Restaurant logo" hidden> 
             <img class="user-pfp-menu" src="#" alt="User Profile" style="display: none;">
-            <a href="/html/index.html">Home</a>
+            <a href="/index.html">Home</a>
             <a href="/html/Menu.html">Menu</a>
             <a href="/html/Our-Chefs.html">Chefs</a>
             <a href="/html/reservation.html">Make a Reservation</a>
