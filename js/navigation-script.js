@@ -8,9 +8,9 @@ function loadNavigation() {
             <img class="logo-in-menu" src="/images/logo.svg" alt="Restaurant logo" hidden> 
             <img class="user-pfp-menu" src="#" alt="User Profile" style="display: none;">
             <a href="index.html">Home</a>
-            <a href="/html/Menu.html">Menu</a>
-            <a href="/html/Our-Chefs.html">Chefs</a>
-            <a href="/html/reservation.html">Make a Reservation</a>
+            <a href="Menu.html">Menu</a>
+            <a href="Our-Chefs.html">Chefs</a>
+            <a href="reservation.html">Make a Reservation</a>
             <button class="Login-Signup-menu">Login / Signup</button>
             <div class="visit-us">
                 <h3>Visit Us</h3>
