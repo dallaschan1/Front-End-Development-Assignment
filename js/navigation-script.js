@@ -1,7 +1,7 @@
 function loadNavigation() {
     const navigationHTML = `
     <header>
-        <img class="logo" src="/images/logo.svg" alt="Restaurant logo"> 
+        <img class="logo" src="images/logo.svg" alt="Restaurant logo"> 
         <button class="hamburger-menu">☰</button> 
         <nav class="navigation">
             <button class="close-menu">X</button> 
