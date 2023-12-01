@@ -15,8 +15,8 @@ function loadNavigation() {
             <div class="visit-us">
                 <h3>Visit Us</h3>
                 <a href="https://maps.app.goo.gl/DaQyjKibYgyqRcD26">69 Bussorah St, Singapore 199482</a>
-                <p>Daily: 1pm to 10.00pm</p>
-                <p id = "aaa" >booking@restaurant.com</p>
+                <p>Daily: 8am to 10.00pm</p>
+                <p id = "aaa" >goodness@gmail.com</p>
             </div>
         </nav>
         <button class="Login-Signup">Login / Signup</button>
@@ -97,7 +97,6 @@ document.querySelector('.close-menu').addEventListener('click', function() {
                 userPfpMenuElement.style.display = 'block';
             }
     
-            // Hide login/signup buttons if desired
             loginSignupButton.style.display = 'none';
             loginSignupMenuButton.style.display = 'none';
         } else {

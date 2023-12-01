@@ -347,7 +347,6 @@ header {
 .form-group input:focus + label,
 .form-group input:not(:placeholder-shown) + label {
     font-size: 14px;
-    color: 333;
     transform: translateY(-35px);
 }
 

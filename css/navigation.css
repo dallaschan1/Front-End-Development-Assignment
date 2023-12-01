@@ -155,7 +155,6 @@ header {
     font-size: 30px;
     margin-bottom: 0px;
     text-decoration: underline;
-    padding-left: auto;
 
 }
 
@@ -221,7 +220,6 @@ header {
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
         display: flex;
         flex-direction: column;
-        align-items: left;
         transition: left 0.3s;
         justify-content: start;
         padding-top: 20px;
@@ -349,7 +347,6 @@ header {
 
 
     .navigation .visit-us a {
-        margin-left: 9;
         padding-left: 0;
         padding-bottom: 0;
         text-decoration: none;
@@ -384,7 +381,6 @@ header {
         width: 100%;
         
         background-color: transparent;
-        box-shadow: 0  transparent;
     }
 
     .navigation{
@@ -450,7 +446,7 @@ header {
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
         display: flex;
         flex-direction: column;
-        align-items: left;
+
         transition: left 0.3s;
         justify-content: start;
         z-index: 1000;
@@ -615,7 +611,7 @@ header {
         width: 100%;
         
         background-color: transparent;
-        box-shadow: 0  transparent;
+
     }
 
     .navigation{

@@ -2,7 +2,8 @@
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Goodness kitchen</title>
+        <meta charset="UTF-8">
+        <title>Goodness Eats</title>
         <link rel="stylesheet" href="/css/normalize.css">
         <link rel="stylesheet" href="/css/Menu.css">
         <link rel="stylesheet" href="/css/navigation.css">
@@ -18,24 +19,24 @@
 
 
         <main class="Menu-container">
-            <article class="dotd">
+            <div class="dotd">
             <img src="/images/special-dish-banner.jpg" alt="Dish of the day" class="dishoftheday">
-                <main class="text">
+                <article class="text">
                     <p id="special">DISH OF THE DAY</p>
                     <h1>Meaty Delight</h1>
                     <p>Today's special, the 'Meaty Delight', is a culinary masterpiece that promises to tantalize your taste buds with its rich and savory flavors. This dish is a harmonious blend of the finest ingredients, featuring tender, succulent meat that has been carefully seasoned and cooked to perfection. Every bite offers a delightful combination of textures and tastes, from the juicy meat to the subtle hints of aromatic herbs and spices. It's a dish designed not just to satisfy your hunger but to provide an unforgettable dining experience. Whether you're a meat lover or just looking to try something new and exciting, our Meaty Delight is sure to impress. Come in and indulge in this exquisite creation that's cooked with passion and served with pride.                    </p>
                     <button  id="viewMenuButton">View Our Menu</button>        
-                </main>
-            </article>
+                </article>
+            </div>
             
             
             <div id="Menu-Deco"></div>
    
             <img src="/images/badge-2.png" alt="menu logo" id="Menu-Logo">
 
-            <main>
+            <article>
                 <p id="Menu-Name">Menu</p>
-                <div id="menu-selector-holder">
+                <nav id="menu-selector-holder">
                     <span class="menu-selector active" onclick="updateMenu('chicken')">Chicken</span>
                     <span class="separator">/</span>
                     <span class="menu-selector" onclick="updateMenu('drink')">Drink</span>
@@ -43,7 +44,7 @@
                     <span class="menu-selector" onclick="updateMenu('salad')">Salad</span>
                     <span class="separator">/</span>
                     <span class="menu-selector" onclick="updateMenu('seafood')">Seafood</span>
-                </div>
+                </nav>
                 
                   
                 <div id="content">
@@ -51,7 +52,7 @@
                         <div class="item-group">
                             <!-- Item 1 -->
                             <div class="item">
-                                <img src="/images/chicken 0.png" alt="Chicken Dish" class="food-image">
+                                <img src="/images/chicken0.png" alt="Chicken Dish" class="food-image">
                                 <div class="text-contents">
                                     <div class="name-and-price">
                                         <h3>Grilled Chicken Supreme</h3>
@@ -211,7 +212,7 @@
                     <div class="item-group">
                         <!-- Item 1 -->
                         <div class="item">
-                            <img src="/images/menu-1.png" alt="Salad" class="food-image">
+                            <img src="/images/salad1.png" alt="Salad" class="food-image">
                             <div class="text-contents">
                                 <div class="name-and-price">
                                     <h3>Caesar Salad</h3>
@@ -223,7 +224,7 @@
                         <div class="separator2"></div>
                         <!-- Item 2 -->
                         <div class="item">
-                            <img src="/images/menu-1.png" alt="Salad" class="food-image">
+                            <img src="/images/salad2.png" alt="Salad" class="food-image">
                             <div class="text-contents">
                                 <div class="name-and-price">
                                     <h3>Greek Salad</h3>
@@ -236,7 +237,7 @@
                     <div class="item-group">
                         <!-- Item 3 -->
                         <div class="item">
-                            <img src="/images/menu-1.png" alt="Salad" class="food-image">
+                            <img src="/images/salad3.png" alt="Salad" class="food-image">
                             <div class="text-contents">
                                 <div class="name-and-price">
                                     <h3>Quinoa Salad</h3>
@@ -248,7 +249,7 @@
                         <div class="separator2"></div>
                         <!-- Item 4 -->
                         <div class="item">
-                            <img src="/images/menu-1.png" alt="Salad" class="food-image">
+                            <img src="/images/salad4.png" alt="Salad" class="food-image">
                             <div class="text-contents">
                                 <div class="name-and-price">
                                     <h3>Avocado Salad</h3>
@@ -265,7 +266,7 @@
                     <div class="item-group">
                         <!-- Item 1 -->
                         <div class="item">
-                            <img src="/images/menu-1.png" alt="Seafood" class="food-image">
+                            <img src="/images/seafood1.png" alt="Seafood" class="food-image">
                             <div class="text-contents">
                                 <div class="name-and-price">
                                     <h3>Grilled Salmon</h3>
@@ -277,7 +278,7 @@
                         <div class="separator2"></div>
                         <!-- Item 2 -->
                         <div class="item">
-                            <img src="/images/menu-1.png" alt="Seafood" class="food-image">
+                            <img src="/images/seafood2.png" alt="Seafood" class="food-image">
                             <div class="text-contents">
                                 <div class="name-and-price">
                                     <h3>Shrimp Scampi</h3>
@@ -290,7 +291,7 @@
                     <div class="item-group">
                         <!-- Item 3 -->
                         <div class="item">
-                            <img src="/images/menu-1.png" alt="Seafood" class="food-image">
+                            <img src="/images/seafood3.png" alt="Seafood" class="food-image">
                             <div class="text-contents">
                                 <div class="name-and-price">
                                     <h3>Lobster Bisque</h3>
@@ -302,7 +303,7 @@
                         <div class="separator2"></div>
                         <!-- Item 4 -->
                         <div class="item">
-                            <img src="/images/menu-1.png" alt="Seafood" class="food-image">
+                            <img src="/images/seafood4.png" alt="Seafood" class="food-image">
                             <div class="text-contents">
                                 <div class="name-and-price">
                                     <h3>Crab Cakes</h3>
@@ -318,12 +319,12 @@
             
             
 
-            </main>
+            </article>
        
         </main>
       
 
-        <div id="/js/extension"></div>
+        <div id="extension"></div>
         <script src="/js/navigation-script.js"></script>
         <script src="/js/menu-script.js"></script>
        

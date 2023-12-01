@@ -3,7 +3,7 @@ let map, directionsService, directionsRenderer;
         function initMap() {
             map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 6,
-                center: { lat: 40.7128, lng: -74.0060 } // Default center (New York City)
+                center: { lat: 40.7128, lng: -74.0060 } 
             });
         
             directionsService = new google.maps.DirectionsService();

@@ -1,10 +1,11 @@
+/* General Body Styles */
 body {
     background-color: rgba(0, 0, 0, 0.9);
     justify-content: center;
     background-image: url(/images/form-pattern.png);
-   
 }
 
+/* Card Styles */
 .card {
     width: 70%;
     height: fit-content;
@@ -17,6 +18,7 @@ body {
     margin-bottom: auto;
 }
 
+/* Text Content Styles */
 .text-content {
     font-weight: 500;
     line-height: 1.5;
@@ -29,6 +31,7 @@ body {
     padding-right: 10px;
 }
 
+/* Head Text Case Styles */
 .head-text-case, .head-text-case1, .head-text-case2, .head-text-case3 {
     color: white;
     font-family: 'Times New Roman', Times, serif;
@@ -36,6 +39,7 @@ body {
     font-size: 30px;
 }
 
+/* Body Text Case Styles */
 .body-text-case, .body-text-case1, .body-text-case2, .body-text-case3 {
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
@@ -45,6 +49,7 @@ body {
     overflow-wrap: break-word;
 }
 
+/* Image Styles */
 .images {
     position: relative;
     width: 500px;
@@ -56,6 +61,7 @@ body {
     filter: brightness(110%) saturate(120%);
 }
 
+/* Button Styles within Card */
 .card button {
     width: 300px;
     height: 100px;
@@ -69,9 +75,9 @@ body {
     font-weight: bold;
 }
 
+/* Dish Image Styles */
 .dish-images {
     display: none; /* Initially hidden */
-    /* Add more styles as needed */
 }
 
 .dish-images img {
@@ -81,6 +87,7 @@ body {
     transition: transform 0.5s ease;
 }
 
+/* Carousel Pagination Styles */
 .carousel-pagination {
     text-align: center;
     margin-bottom: 50px;
@@ -101,12 +108,13 @@ body {
     background-color: white;
 }
 
+/* Highlight Text Styles */
 .highlight-text {
     color: #f0f0f0; /* Slightly below white color */
     font-weight: bold; /* Make it bolder */
 }
 
-
+/* Keyframes for Animations */
 @keyframes fadeInOut {
     0%, 100% {
         opacity: 1;
@@ -137,17 +145,21 @@ body {
     }
 }
 
+/* Media Queries for Responsive Design */
 @media screen and (max-width: 768px) {
     .card {
         width: 90%;
         margin: 10vh auto;
     }
+
     .text-content {
         font-size: 16px;
     }
+
     .head-text-case, .head-text-case1, .head-text-case2, .head-text-case3 {
         font-size: 24px;
     }
+
     .body-text-case, .body-text-case1, .body-text-case2, .body-text-case3 {
         font-size: 11px;
     }
@@ -159,6 +171,7 @@ body {
         align-items: center;
         margin-top: 150px;
     }
+
     .images {
         width: 100%;
         height: 500px;

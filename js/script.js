@@ -7,7 +7,7 @@ document.getElementById("prev").addEventListener("click", () => changeSlide(-1))
 document.getElementById("next").addEventListener("click", () => changeSlide(1));
 
 function changeSlide(step) {
-    // Start by removing 'active' and 'zooming' from current elements
+   
     images[currentIndex].classList.remove('active', 'zooming');
     textContents[currentIndex].classList.remove('active');
 

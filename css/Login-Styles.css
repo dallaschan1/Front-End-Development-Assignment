@@ -203,12 +203,12 @@ form.sign-in-form {
 
 .left-panel {
   pointer-events: all;
-  padding: 3rem 30% 30rem 12%;
+  padding: 3rem 50% 30rem 12%;
 }
 
 .right-panel {
   pointer-events: none;
-  padding: 3rem 10% 30rem 12%;
+  padding: 3rem 30% 30rem 12%;
 }
 
 .panel .content {

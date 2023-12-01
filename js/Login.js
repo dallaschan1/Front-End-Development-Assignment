@@ -20,14 +20,14 @@ localStorage.setItem('isLoggedIn', 'true');
 
     } else if (username === "admin" && password === "admin") {
       alert("Admin login successful!");
-      // Handle admin login
+
     } else {
       alert("Invalid credentials!");
     }
   }
 
 function registerUser(event) {
-    event.preventDefault(); // Prevent the form from submitting traditionally
+    event.preventDefault(); 
   
     // Retrieve values from form
     const username = document.querySelector('.sign-up-form input[type="text"]').value;
@@ -36,7 +36,7 @@ function registerUser(event) {
     const phone = document.querySelector('.sign-up-form input[type="tel"]').value;
     const imageFile = document.querySelector('.sign-up-form input[type="file"]').files[0];
   
-    // Basic validation
+
     if (!username || !password || !email || !phone || !imageFile) {
       alert("All fields are required, including image upload.");
       return;
@@ -51,7 +51,7 @@ function registerUser(event) {
   
       // Storing the user data
       localStorage.setItem('username', username);
-      localStorage.setItem('password', password); // Note: Storing passwords like this is not secure
+      localStorage.setItem('password', password); 
       localStorage.setItem('email', email);
       localStorage.setItem('phone', phone);
       localStorage.setItem('userImage', base64Image); // Storing the base64 image string
