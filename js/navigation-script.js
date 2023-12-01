@@ -40,7 +40,7 @@ function addEventListeners() {
     if (loginSignupButton) {
         loginSignupButton.addEventListener('click', function() {
             
-            window.location.href = 'html/login-signup.html'; // Adjust the path as necessary
+            window.location.href = 'html/login-signup.html';
         });
     }
 
@@ -48,7 +48,7 @@ function addEventListeners() {
     var loginSignupMenuButton = document.querySelector('.Login-Signup-menu');
     if (loginSignupMenuButton) {
         loginSignupMenuButton.addEventListener('click', function() {
-            window.location.href = '/html/login-signup.html'; // Adjust the path as necessary
+            window.location.href = '/html/login-signup.html'; 
         });
     }
 }
