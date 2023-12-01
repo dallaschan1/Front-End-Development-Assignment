@@ -179,7 +179,7 @@ form.sign-in-form {
   right: 48%;
   transform: translateY(-50%);
   background-color: black;
-  background-image: url(images/footer-form-bg.png);
+  background-image: url(/images/footer-form-bg.png);
   
   transition: 1.8s ease-in-out;
   border-radius: 50%;

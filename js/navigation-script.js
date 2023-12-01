@@ -1,16 +1,16 @@
 function loadNavigation() {
     const navigationHTML = `
     <header>
-        <img class="logo" src="images/logo.svg" alt="Restaurant logo"> 
+        <img class="logo" src="/images/logo.svg" alt="Restaurant logo"> 
         <button class="hamburger-menu">☰</button> 
         <nav class="navigation">
             <button class="close-menu">X</button> 
-            <img class="logo-in-menu" src="images/logo.svg" alt="Restaurant logo" hidden> 
+            <img class="logo-in-menu" src="/images/logo.svg" alt="Restaurant logo" hidden> 
             <img class="user-pfp-menu" src="#" alt="User Profile" style="display: none;">
             <a href="index.html">Home</a>
-            <a href="html/Menu.html">Menu</a>
-            <a href="html/Our-Chefs.html">Chefs</a>
-            <a href="html/reservation.html">Make a Reservation</a>
+            <a href="/html/Menu.html">Menu</a>
+            <a href="/html/Our-Chefs.html">Chefs</a>
+            <a href="/html/reservation.html">Make a Reservation</a>
             <button class="Login-Signup-menu">Login / Signup</button>
             <div class="visit-us">
                 <h3>Visit Us</h3>
@@ -48,7 +48,7 @@ function addEventListeners() {
     var loginSignupMenuButton = document.querySelector('.Login-Signup-menu');
     if (loginSignupMenuButton) {
         loginSignupMenuButton.addEventListener('click', function() {
-            window.location.href = 'html/login-signup.html'; // Adjust the path as necessary
+            window.location.href = '/html/login-signup.html'; // Adjust the path as necessary
         });
     }
 }
