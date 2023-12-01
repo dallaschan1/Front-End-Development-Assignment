@@ -149,6 +149,7 @@
 /* Body Styling */
 body {
     background-color: white;
+    display: block;
 }
 
 /* Logo Styling */

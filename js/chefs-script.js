@@ -105,7 +105,7 @@ function textTypingEffect(element, text, callback, i = 0, wordCount = 0) {
 
     
     if (i < text.length - 1) {
-        typingTimeout = setTimeout(() => textTypingEffect(element, text, callback, i + 1, wordCount), 3);
+        typingTimeout = setTimeout(() => textTypingEffect(element, text, callback, i + 1, wordCount), 1);
     } else if (callback) {
         callback();
     }
@@ -142,17 +142,18 @@ Her commitment to excellence is evident in her dedication to using only the fine
     div = document.querySelector(".body-text-case2");
     headdiv = document.querySelector(".head-text-case2");
     heading = "Chef John Doe";
-    profileText = `Profile: 
-    Amy Richardson, a luminary in the culinary world, has reshaped modern gastronomy with her innovative approach and exceptional skill. Trained at the distinguished Culinary Institute of America, Amy has consistently showcased her extraordinary prowess in the kitchen. With over 15 years of experience in prestigious kitchens around the globe, she's developed a unique culinary style that seamlessly blends traditional techniques with contemporary flavors.
+    profileText = `Marco Alvarez, an acclaimed figure in the culinary landscape, has revolutionized the art of cooking with his inventive techniques and exceptional finesse. A graduate of the prestigious Le Cordon Bleu, Marco has demonstrated his remarkable culinary talents in top-tier kitchens across the world. With more than 20 years of experience, he has honed a distinctive culinary style that artfully merges classic methods with avant-garde flavors.
+
+    Marco's passion for culinary excellence is rooted in his commitment to using high-quality, sustainable ingredients. His cooking philosophy centers on elevating simple, natural flavors while presenting his creations in a visually stunning and innovative manner. His scrupulous attention to detail and unwavering pursuit of culinary excellence have been instrumental in transforming The Aventine into a critically-acclaimed, award-winning restaurant.
+    `;
     
-    Her commitment to excellence is evident in her dedication to using only the finest, locally-sourced ingredients. Amy's cooking philosophy revolves around enhancing natural flavors while presenting dishes in an artistically sophisticated manner. Her meticulous attention to detail and relentless pursuit of perfection have been pivotal in elevating La Maison Gourmet to a Michelin-starred establishment.`;
-    
-            accoladesText = `Accolades:
-    - Michelin Star Award: La Maison Gourmet, under Amy's expert guidance, earned its first Michelin star in 2018, signifying her culinary mastery and innovation.
-    - James Beard Award for Best New Restaurant (2019): This prestigious award was a result of Amy's creative menu planning and exceptional culinary skills.
-    - Gourmet Magazine's Chef of the Year (2020): Amy was nationally recognized for her significant contributions to the culinary arts.
-    - Featured in 'Chefs of Tomorrow': Amy was highlighted in this documentary series that profiles the world's most influential chefs.
-    - Guest Judge on 'MasterChef': Amy has shared her culinary expertise on this popular cooking show, inspiring a new generation of chefs.`;
+            accoladesText = `<span class="highlight-text">Accolades:</span> <br>
+            - Golden Fork Award: Under Marco's visionary leadership, The Aventine was awarded the Golden Fork in 2017, a testament to his culinary ingenuity.<br>
+            - International Chef of the Year (2018): This global recognition was a nod to Marco's exceptional skills and innovative menu designs.<br>
+            - Top 10 Chefs by Culinary World Magazine (2019): Marco was recognized globally for his outstanding contributions to culinary arts.<br>
+            - Star in 'Culinary Masters': Featured in this acclaimed documentary, Marco shared insights into his unique cooking style.<br>
+            - Renowned Speaker at Global Chefs Conference: Marco has been a keynote speaker, sharing his expertise and inspiring culinary professionals worldwide.
+            `;
     
     break;
 
@@ -160,17 +161,18 @@ Her commitment to excellence is evident in her dedication to using only the fine
             div = document.querySelector(".body-text-case3");
         headdiv = document.querySelector(".head-text-case3");
         heading = "Chedsdsdardson";
-        profileText = `Profile: 
-Amy Richardson, a luminary in the culinary world, has reshaped modern gastronomy with her innovative approach and exceptional skill. Trained at the distinguished Culinary Institute of America, Amy has consistently showcased her extraordinary prowess in the kitchen. With over 15 years of experience in prestigious kitchens around the globe, she's developed a unique culinary style that seamlessly blends traditional techniques with contemporary flavors.
+        profileText = `Elena Soto, a trailblazer in the realm of gastronomy, has carved a niche for herself with her creative culinary expressions and unparalleled expertise. Trained at the renowned Johnson & Wales University, Elena has consistently displayed her exceptional culinary acumen in prominent restaurants internationally. Boasting over a decade of experience, she has developed a signature culinary style that beautifully combines age-old traditions with modern, eclectic tastes.
 
-Her commitment to excellence is evident in her dedication to using only the finest, locally-sourced ingredients. Amy's cooking philosophy revolves around enhancing natural flavors while presenting dishes in an artistically sophisticated manner. Her meticulous attention to detail and relentless pursuit of perfection have been pivotal in elevating La Maison Gourmet to a Michelin-starred establishment.`;
+        Elena’s commitment to culinary artistry is reflected in her dedication to sourcing premium, organic ingredients. Her cooking philosophy is centered on intensifying inherent flavors while artistically presenting each dish. Her meticulous craftsmanship and relentless drive for perfection have been key in making The Orchard a destination for gourmet dining, earning it numerous accolades.
+        `;
 
-        accoladesText = `Accolades:
-- Michelin Star Award: La Maison Gourmet, under Amy's expert guidance, earned its first Michelin star in 2018, signifying her culinary mastery and innovation.
-- James Beard Award for Best New Restaurant (2019): This prestigious award was a result of Amy's creative menu planning and exceptional culinary skills.
-- Gourmet Magazine's Chef of the Year (2020): Amy was nationally recognized for her significant contributions to the culinary arts.
-- Featured in 'Chefs of Tomorrow': Amy was highlighted in this documentary series that profiles the world's most influential chefs.
-- Guest Judge on 'MasterChef': Amy has shared her culinary expertise on this popular cooking show, inspiring a new generation of chefs.`;
+        accoladesText = `<span class="highlight-text">Accolades:</span> <br>
+        - Culinary Excellence Award: The Orchard, under Elena's innovative direction, was awarded this honor in 2016, highlighting her culinary brilliance.<br>
+        - National Rising Chef Award (2017): This award recognized Elena’s inventive menus and exceptional cooking skills.<br>
+        - Food & Wine's Best New Chef (2018): Elena was nationally acclaimed for her significant impact on the culinary scene.<br>
+        - Profiled in 'The Next Big Thing': This documentary series featured Elena, spotlighting her as one of the leading chefs of her generation.<br>
+        - Regular Contributor on 'The Art of Cooking': Elena has appeared on this renowned cooking show, imparting her knowledge and inspiring aspiring chefs.
+        `;
 
         
 

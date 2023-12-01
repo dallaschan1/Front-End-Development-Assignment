@@ -183,6 +183,8 @@
 .item img {
     width: calc(30px + 6.3vw);
     border-radius: 20px;
+    width: 125.75px;
+    height: 125.75px;
 }
 
 /* Name and Price Styles */

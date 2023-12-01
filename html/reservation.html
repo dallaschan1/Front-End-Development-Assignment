@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/reservation.css" >
+<link rel="stylesheet" href="/css/navigation.css">
+</head>
+<body>
+    <div id="navigation-placeholder"></div>
+    <div id = 'b'>
+    <div class="container">
+        <h2>Online Reservation</h2>
+        <form>
+            <div class="row">
+                <input type="text" id="username" placeholder="Name">
+<input type="text" id="phoneNumber" placeholder="Phone Number">
+            </div>
+            <div class="row full">
+                <input type="email" id="email" placeholder="Email">
+            </div>
+            <div class="row">
+                <select name="people">
+                    <option value="1">1 Person</option>
+                    <option value="2">2 People</option>
+                    <option value="3">3 People</option>
+                    <option value="4">4 People</option>
+                </select>
+                <input type="date">
+                <select name="time">
+                    <option value="08:00">8:00 AM</option>
+                    <option value="09:00">9:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="22:00">10:00 PM</option>
+                </select>
+            </div>
+            <div class="row full">
+                <textarea placeholder="Your message"></textarea>
+            </div>
+            <div class="row">
+                <button type="submit">Book a Table</button>
+            </div>
+        </form>
+    </div>
+    <div id = "a">
+    <div id="directions-form">
+       
+        <input id="start" type="text" placeholder="Enter starting point">
+
+        <input id="end" type="text" value="Cappadocia Turkish & Mediterranean Restaurant" readonly>
+        
+        <button onclick="calculateRoute()" id = "buttones">Get Directions</button>
+    </div>
+    <div id="map"></div>
+    </div>
+    </div>
+    
+
+
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2hz9TuTkwQHkaLdqizStGQop8JES63jE&libraries=places&callback=initMap" async defer></script>
+    <script src="/js/reservation.js"></script>
+    <script src="/js/navigation-script.js"></script>
+</body>
+</html>

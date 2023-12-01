@@ -161,7 +161,7 @@ body {
     }
     .images {
         width: 100%;
-        height: 800px;
+        height: 500px;
         left: 0;
         transform-origin: center center;
         animation: expandAndMoveUp 4s ease forwards, fadeInOut 6s ease-in-out infinite;

@@ -11,33 +11,11 @@
     
 </head>
 <body>
-    <header>
-        <img class="logo" src="/images/logo.svg" alt="Restaurant logo"> 
-        <button class="hamburger-menu">☰</button> 
-        <nav class="navigation">
-            <button class="close-menu">X</button> 
-            <img class="logo-in-menu" src="/images/logo.svg" alt="Restaurant logo" hidden> 
-            <a href="index.html">Home</a>
-            <a href="Menu.html">Menu</a>
-            <a href="Our-Chefs.html" class="active">Chefs</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact Us</a>
-            <button class="button-Reservation-menu">Make a Reservation</button>
-            <div class="visit-us">
-                <h3>Visit Us</h3>
-                <a href="https://maps.app.goo.gl/DaQyjKibYgyqRcD26">69 Bussorah St, Singapore 199482</a>
-    
-                <p>Daily: 1pm to 10.00pm</p>
-                <p>booking@restaurant.com</p>
-            </div>
-        </nav>
-        </nav>
-        <button class="button-Reservation">Make a Reservation</button>
-    </header>
+    <div id="navigation-placeholder"></div>
 
 <div id="carousel-container">
     <div class="card">
-        <img class="images" src="https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2021/03/04/a06ffef30eb543ce904b76c5df31dd55_Mitou+Female+Chef+Asia+Michelin+Guide+Seoul.jpg">
+        <img class="images" src="/images/chef1.png">
         <div class="text-content">
         <div class="head-text-case1"></div>
         <div class="body-text-case1"></div>
@@ -45,9 +23,9 @@
         </div>
     </div>
     <div class="card" style="display: none;">
-        <img class="images" src="https://i.pinimg.com/originals/dd/97/3a/dd973ac116a977c8dd5296b0da504b8c.jpg">
+        <img class="images" src="/images/marco.png">
         <div class="text-content">
-            <div class="head-text-case2">Heading for Card 2</div>
+            <div class="head-text-case2"></div>
             <div class="body-text-case2">
             </div>
             <button id="viewMenuButton">View Menu</button>
@@ -55,9 +33,9 @@
         </div>
     </div>
     <div class="card" style="display: none;">
-        <img class="images" src="https://imgv3.fotor.com/images/cover-photo-image/a-beautiful-girl-with-gray-hair-and-lucxy-neckless-generated-by-Fotor-AI.jpg">
+        <img class="images" src="/images/chef3.png">
         <div class="text-content">
-            <div class="head-text-case3">Heading for Card 2</div>
+            <div class="head-text-case3"></div>
             <div class="body-text-case3">
             </div>
             <button id="viewMenuButton">View Menu</button>
@@ -68,7 +46,9 @@
 </div>
 <div class="carousel-pagination"></div>
 
-<script src="/js/Navigation.js"></script>
+
+<script src="/js/navigation-script.js"></script>
+
 <script src="/js/chefs-script.js"></script>
 </body>
 </html>
