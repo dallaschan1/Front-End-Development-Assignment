@@ -4,7 +4,7 @@
         
    
         background-color: rgb(0, 0, 0); /* Changed to black */
-        background-image: url(/images/testimonial-bg.jpg);
+        background-image: url(images/testimonial-bg.jpg);
         margin: 0;
         font-family: 'Times New Roman', serif; /* Changed font */
         overflow: visible;
