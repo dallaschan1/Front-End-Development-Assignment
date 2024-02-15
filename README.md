@@ -1,5 +1,8 @@
 # Goodness Eats
 
+##Github Pages
+
+
 ## Project Overview
 
 **Goodness Eats** is a user-centric website designed for a modern restaurant experience. The platform enables users to peruse an extensive menu, make reservations, and familiarize themselves with the restaurant's offerings and its expert culinary team. Focused on convenience and a holistic dining experience, Goodness Eats stands as the ideal choice for adults seeking quality, flavor, and a warm ambiance.
